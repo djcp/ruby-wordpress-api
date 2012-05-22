@@ -49,14 +49,14 @@ module Rubypress
         opts[:blog_id], 
         opts[:username],
         opts[:password],
-        [
-          opts[:post_type], 
-          opts[:post_status],
-          opts[:number],
-          opts[:offset],
-          opts[:orderby],
-          opts[:order]
-        ],
+        {
+          :post_type => opts[:post_type], 
+          :post_status => opts[:post_status],
+          :number => opts[:number],
+          :offset => opts[:offset],
+          :orderby => opts[:orderby],
+          :order => opts[:order]
+        },
         opts[:default_post_fields]
       )
     end
