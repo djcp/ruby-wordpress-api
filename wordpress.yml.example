@@ -1,7 +1,21 @@
-wordpress: 
-  host: blog.example.com
-  path: /xmlrpc.php
-  port: 80
-  username: admin
-  password: foobar
-  use_ssl: false
+:wordpress_admin: 
+  :host: blog.example.com
+  :path: /xmlrpc.php
+  :port: 80
+  :username: admin
+  :password: foobar
+  :use_ssl: false
+:wordpress_editor: 
+  :host: blog.example.com
+  :path: /xmlrpc.php
+  :port: 80
+  :username: foo
+  :password: foobar
+  :use_ssl: false
+:wordpress_invalid: 
+  :host: blog.example.com
+  :path: /xmlrpc.php
+  :port: 80
+  :username: fasddfasdoo
+  :password: foobar
+  :use_ssl: false

@@ -23,14 +23,31 @@ module Rubypress
       self.password = opts[:password]
       self.use_ssl = opts[:use_ssl]
       self.default_post_fields = opts[:default_post_fields]
+      self.connect
+      self
     end
 
     def connect
       @connection = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,nil,nil,self.use_ssl,nil)
     end
 
+    def get_options(options = {})
+      opts = {
+        :blog_id => 0,
+        :username => self.username,
+        :password => self.password,
+        :options => []
+      }.merge(options)
+      self.connection.call(
+        "wp.getOptions", 
+        opts[:blog_id], 
+        opts[:username],
+        opts[:password],
+        opts[:options]
+      )
+    end
+
     def recent_posts(options = {})
-      self.connect if self.connection.nil?
       opts = {
         :blog_id => 0,
         :username => self.username,
@@ -43,7 +60,6 @@ module Rubypress
         :order => 'asc',
         :default_post_fields => self.default_post_fields
       }.merge(options)
-      puts opts.inspect
       self.connection.call(
         "wp.getPosts", 
         opts[:blog_id], 
