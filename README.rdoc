@@ -1,6 +1,8 @@
-= rubypress
+sd= rubypress
 
 This implements the WordPress xmlrpc api as released in version 3.4.
+
+WARNING: SSL is NOT enabled by default for ease of testing for those running mac systems without setup SSL certs. If this is important to you, checkout the options for instantiating a new client.
 
 == Contributing to rubypress
  

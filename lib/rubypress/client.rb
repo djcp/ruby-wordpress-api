@@ -9,7 +9,7 @@ module Rubypress
     def initialize(options = {})
       opts = {
         :port => 80,
-        :use_ssl => true,
+        :use_ssl => false,
         :host => nil,
         :path => '/xmlrpc.php',
         :username => nil,

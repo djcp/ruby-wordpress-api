@@ -3,6 +3,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rspec'
 require 'yaml'
 require 'rubypress'
+require 'erb'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
@@ -13,7 +14,7 @@ RSpec.configure do |config|
 end
 
 def load_config
-  YAML.load_file((File.exists?('./wordpress.yml')) ? './wordpress.yml' : 'wordpress.yml.example')
+  YAML.load(ERB.new(File.read('./spec/wordpress.yml')).result)
 end
 
 def init_wp_admin_connection

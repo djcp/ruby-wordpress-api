@@ -12,6 +12,12 @@ describe "Rubypress" do
 
     init_wp_editor_connection.get_options.class.should == Hash
 
-    expect { init_wp_invalid_connection.get_options }.should raise_error(XMLRPC::FaultException)
+    expect { init_wp_invalid_connection.get_options }.to raise_error
   end
+
+  it 'can pull the latest posts' do
+    init_wp_editor_connection.recent_posts(:number => 1).class.should == Array
+  end
+
+  
 end
