@@ -13,7 +13,7 @@ RSpec.configure do |config|
 end
 
 def load_config
-  YAML.load_file((File.exists?('./wordpress.yml')) ? './wordpress.yml' : './wordpress.yml.example')
+  YAML.load_file((File.exists?('./wordpress.yml')) ? './wordpress.yml' : 'wordpress.yml.example')
 end
 
 def init_wp_admin_connection
