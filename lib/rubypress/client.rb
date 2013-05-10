@@ -1,4 +1,5 @@
-# encoding: UTF-8
+require 'yaml'
+require 'erb'
 
 module Rubypress
 
@@ -31,7 +32,15 @@ module Rubypress
       @connection = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,nil,nil,self.use_ssl,nil)
     end
 
-    def get_options(options = {})
+    def self.config
+      YAML.load(ERB.new(File.read('./spec/wordpress.yml')).result)
+    end
+
+    def self.testClient
+      @client = self.new(config[:wordpress_admin])
+    end
+
+    def getOptions(options = {})
       opts = {
         :blog_id => 0,
         :username => self.username,
@@ -47,7 +56,26 @@ module Rubypress
       )
     end
 
-    def recent_posts(options = {})
+    def getPost(options = {})
+      opts = {
+        :blog_id => 0,
+        :username => self.username,
+        :password => self.password,
+        :post_type => 'post',
+        :post_status => 'publish',
+        :fields => self.default_post_fields
+      }.merge(options)
+      self.connection.call(
+        "wp.getPost", 
+        opts[:blog_id], 
+        opts[:username],
+        opts[:password],
+        opts[:post_id],
+        opts[:fields]
+      )
+    end
+
+    def getPosts(options = {})
       opts = {
         :blog_id => 0,
         :username => self.username,
@@ -58,7 +86,7 @@ module Rubypress
         :offset => 0,
         :orderby => 'post_date',
         :order => 'asc',
-        :default_post_fields => self.default_post_fields
+        :fields => self.default_post_fields
       }.merge(options)
       self.connection.call(
         "wp.getPosts", 
@@ -73,9 +101,34 @@ module Rubypress
           :orderby => opts[:orderby],
           :order => opts[:order]
         },
-        opts[:default_post_fields]
+        opts[:fields]
       )
     end
+
+    def newPost(options = {})
+      opts = {
+        :username => self.username,
+        :password => self.password,
+        :content => {
+          :post_type => "post",
+          :post_status => "publish",
+          :post_date => Time.now,
+          :post_format => "post",
+          :comment_status => "hold",
+          :ping_status => "closed"
+        }
+      }.deep_merge(options)
+      self.connection.call(
+        "wp.newPost", 
+        opts[:blog_id], 
+        opts[:username],
+        opts[:password],
+        opts[:content]
+      )
+    end
+
+
+
 
   end
 
