@@ -127,7 +127,17 @@ module Rubypress
       )
     end
 
-
+    def getUsersBlogs(options = {})
+      opts = {
+        :username => self.username,
+        :password => self.password
+      }.deep_merge(options)
+      self.connection.call(
+        "wp.getUsersBlogs",
+        opts[:username],
+        opts[:password]
+      )
+    end
 
 
   end

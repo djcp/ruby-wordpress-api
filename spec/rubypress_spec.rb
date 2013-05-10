@@ -24,5 +24,13 @@ describe "Rubypress" do
     client.getPost(:post_id => id).class.should == Hash
   end
 
+  it 'can use newPost method (with getUsersBlogs) to create a new post' do
+
+    client = init_wp_editor_connection
+    user_blogs = client.getUsersBlogs
+    blog_id = user_blogs[0]["blogid"]
+    init_wp_editor_connection.newPost(:blog_id => blog_id, :content => { :post_title => "Test post", :post_content => "This a great test.", :post_type => "post"}).class.should == String
+     
+  end
 
 end
