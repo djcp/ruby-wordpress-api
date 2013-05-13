@@ -1,4 +1,4 @@
-sd= rubypress
+= rubypress
 
 This implements the WordPress xmlrpc api as released in version 3.4.
 
