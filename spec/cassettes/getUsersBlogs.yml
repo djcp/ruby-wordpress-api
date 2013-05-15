@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value><string>WORDPRESS_ADMIN_USER</string></value></param><param><value><string>WORDPRESS_ADMIN_PASS</string></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '226'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 May 2013 14:42:59 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '680'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>isAdmin</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>url</name><value><string>http://WORDPRESS_HOST/</string></value></member>\n
+        \ <member><name>blogid</name><value><string>47989391</string></value></member>\n
+        \ <member><name>blogName</name><value><string>cthisisatest</string></value></member>\n
+        \ <member><name>xmlrpc</name><value><string>https://WORDPRESS_HOST/xmlrpc.php</string></value></member>\n</struct></value>\n</data></array>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 15 May 2013 14:42:59 GMT
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.newPost</methodName><params><param><value><string>47989391</string></value></param><param><value><string>WORDPRESS_ADMIN_USER</string></value></param><param><value><string>WORDPRESS_ADMIN_PASS</string></value></param><param><value><struct><member><name>post_type</name><value><string>post</string></value></member><member><name>post_status</name><value><string>publish</string></value></member><member><name>post_date</name><value><dateTime.iso8601>20130515T10:42:59</dateTime.iso8601></value></member><member><name>post_format</name><value><string>post</string></value></member><member><name>comment_status</name><value><string>hold</string></value></member><member><name>ping_status</name><value><string>closed</string></value></member><member><name>post_title</name><value><string>Test
+        post</string></value></member><member><name>post_content</name><value><string>This
+        a great test.</string></value></member></struct></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '994'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 May 2013 14:43:00 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '177'
+      Connection:
+      - keep-alive
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <string>39</string>\n      </value>\n    </param>\n
+        \ </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 15 May 2013 14:43:00 GMT
+recorded_with: VCR 2.4.0

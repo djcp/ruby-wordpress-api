@@ -1,0 +1,165 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getPosts</methodName><params><param><value><i4>0</i4></value></param><param><value><string>WORDPRESS_ADMIN_USER</string></value></param><param><value><string>WORDPRESS_ADMIN_PASS</string></value></param><param><value><struct><member><name>post_type</name><value><string>post</string></value></member><member><name>post_status</name><value><string>publish</string></value></member><member><name>number</name><value><i4>1</i4></value></member><member><name>offset</name><value><i4>0</i4></value></member><member><name>orderby</name><value><string>post_date</string></value></member><member><name>order</name><value><string>asc</string></value></member></struct></value></param><param><value><array><data><value><string>post</string></value><value><string>terms</string></value><value><string>custom_fields</string></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '909'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 May 2013 14:42:57 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '3605'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>post_id</name><value><string>3</string></value></member>\n
+        \ <member><name>post_title</name><value><string>Rob as PM</string></value></member>\n
+        \ <member><name>post_date</name><value><dateTime.iso8601>20130416T18:13:18</dateTime.iso8601></value></member>\n
+        \ <member><name>post_date_gmt</name><value><dateTime.iso8601>20130416T18:13:18</dateTime.iso8601></value></member>\n
+        \ <member><name>post_modified</name><value><dateTime.iso8601>20130416T18:13:19</dateTime.iso8601></value></member>\n
+        \ <member><name>post_modified_gmt</name><value><dateTime.iso8601>20130416T18:13:19</dateTime.iso8601></value></member>\n
+        \ <member><name>post_status</name><value><string>publish</string></value></member>\n
+        \ <member><name>post_type</name><value><string>post</string></value></member>\n
+        \ <member><name>post_name</name><value><string>rob-as-pm</string></value></member>\n
+        \ <member><name>post_author</name><value><string>46917508</string></value></member>\n
+        \ <member><name>post_password</name><value><string></string></value></member>\n
+        \ <member><name>post_excerpt</name><value><string></string></value></member>\n
+        \ <member><name>post_content</name><value><string>&lt;p&gt;&lt;i&gt;By Cindy
+        Bokma&lt;/i&gt;&lt;/p&gt;&lt;p&gt;Rob as PM is amazballs!!&lt;/p&gt;&lt;div
+        id=&quot;summary&quot;&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;</string></value></member>\n
+        \ <member><name>post_parent</name><value><string>0</string></value></member>\n
+        \ <member><name>post_mime_type</name><value><string></string></value></member>\n
+        \ <member><name>link</name><value><string>http://WORDPRESS_HOST/2013/04/16/rob-as-pm/</string></value></member>\n
+        \ <member><name>guid</name><value><string>http://WORDPRESS_HOST/?p=3</string></value></member>\n
+        \ <member><name>menu_order</name><value><int>0</int></value></member>\n  <member><name>comment_status</name><value><string>open</string></value></member>\n
+        \ <member><name>ping_status</name><value><string>open</string></value></member>\n
+        \ <member><name>sticky</name><value><boolean>0</boolean></value></member>\n
+        \ <member><name>post_thumbnail</name><value><array><data>\n</data></array></value></member>\n
+        \ <member><name>post_format</name><value><string>standard</string></value></member>\n
+        \ <member><name>terms</name><value><array><data>\n  <value><struct>\n  <member><name>term_id</name><value><string>1</string></value></member>\n
+        \ <member><name>name</name><value><string>Uncategorized</string></value></member>\n
+        \ <member><name>slug</name><value><string>uncategorized</string></value></member>\n
+        \ <member><name>term_group</name><value><string>0</string></value></member>\n
+        \ <member><name>term_taxonomy_id</name><value><string>1</string></value></member>\n
+        \ <member><name>taxonomy</name><value><string>category</string></value></member>\n
+        \ <member><name>description</name><value><string></string></value></member>\n
+        \ <member><name>parent</name><value><string>0</string></value></member>\n
+        \ <member><name>count</name><value><int>11</int></value></member>\n</struct></value>\n</data></array></value></member>\n
+        \ <member><name>custom_fields</name><value><array><data>\n  <value><struct>\n
+        \ <member><name>id</name><value><string>3</string></value></member>\n  <member><name>key</name><value><string>jabber_published</string></value></member>\n
+        \ <member><name>value</name><value><string>1366135999</string></value></member>\n</struct></value>\n</data></array></value></member>\n</struct></value>\n</data></array>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 15 May 2013 14:42:57 GMT
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getPost</methodName><params><param><value><i4>0</i4></value></param><param><value><string>WORDPRESS_ADMIN_USER</string></value></param><param><value><string>WORDPRESS_ADMIN_PASS</string></value></param><param><value><string>3</string></value></param><param><value><array><data><value><string>post</string></value><value><string>terms</string></value><value><string>custom_fields</string></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '484'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 15 May 2013 14:42:58 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '3558'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <struct>\n  <member><name>post_id</name><value><string>3</string></value></member>\n
+        \ <member><name>post_title</name><value><string>Rob as PM</string></value></member>\n
+        \ <member><name>post_date</name><value><dateTime.iso8601>20130416T18:13:18</dateTime.iso8601></value></member>\n
+        \ <member><name>post_date_gmt</name><value><dateTime.iso8601>20130416T18:13:18</dateTime.iso8601></value></member>\n
+        \ <member><name>post_modified</name><value><dateTime.iso8601>20130416T18:13:19</dateTime.iso8601></value></member>\n
+        \ <member><name>post_modified_gmt</name><value><dateTime.iso8601>20130416T18:13:19</dateTime.iso8601></value></member>\n
+        \ <member><name>post_status</name><value><string>publish</string></value></member>\n
+        \ <member><name>post_type</name><value><string>post</string></value></member>\n
+        \ <member><name>post_name</name><value><string>rob-as-pm</string></value></member>\n
+        \ <member><name>post_author</name><value><string>46917508</string></value></member>\n
+        \ <member><name>post_password</name><value><string></string></value></member>\n
+        \ <member><name>post_excerpt</name><value><string></string></value></member>\n
+        \ <member><name>post_content</name><value><string>&lt;p&gt;&lt;i&gt;By Cindy
+        Bokma&lt;/i&gt;&lt;/p&gt;&lt;p&gt;Rob as PM is amazballs!!&lt;/p&gt;&lt;div
+        id=&quot;summary&quot;&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;/div&gt;</string></value></member>\n
+        \ <member><name>post_parent</name><value><string>0</string></value></member>\n
+        \ <member><name>post_mime_type</name><value><string></string></value></member>\n
+        \ <member><name>link</name><value><string>http://WORDPRESS_HOST/2013/04/16/rob-as-pm/</string></value></member>\n
+        \ <member><name>guid</name><value><string>http://WORDPRESS_HOST/?p=3</string></value></member>\n
+        \ <member><name>menu_order</name><value><int>0</int></value></member>\n  <member><name>comment_status</name><value><string>open</string></value></member>\n
+        \ <member><name>ping_status</name><value><string>open</string></value></member>\n
+        \ <member><name>sticky</name><value><boolean>0</boolean></value></member>\n
+        \ <member><name>post_thumbnail</name><value><array><data>\n</data></array></value></member>\n
+        \ <member><name>post_format</name><value><string>standard</string></value></member>\n
+        \ <member><name>terms</name><value><array><data>\n  <value><struct>\n  <member><name>term_id</name><value><string>1</string></value></member>\n
+        \ <member><name>name</name><value><string>Uncategorized</string></value></member>\n
+        \ <member><name>slug</name><value><string>uncategorized</string></value></member>\n
+        \ <member><name>term_group</name><value><string>0</string></value></member>\n
+        \ <member><name>term_taxonomy_id</name><value><string>1</string></value></member>\n
+        \ <member><name>taxonomy</name><value><string>category</string></value></member>\n
+        \ <member><name>description</name><value><string></string></value></member>\n
+        \ <member><name>parent</name><value><string>0</string></value></member>\n
+        \ <member><name>count</name><value><int>11</int></value></member>\n</struct></value>\n</data></array></value></member>\n
+        \ <member><name>custom_fields</name><value><array><data>\n  <value><struct>\n
+        \ <member><name>id</name><value><string>3</string></value></member>\n  <member><name>key</name><value><string>jabber_published</string></value></member>\n
+        \ <member><name>value</name><value><string>1366135999</string></value></member>\n</struct></value>\n</data></array></value></member>\n</struct>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 15 May 2013 14:42:58 GMT
+recorded_with: VCR 2.4.0

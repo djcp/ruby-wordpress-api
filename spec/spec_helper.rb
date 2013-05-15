@@ -4,6 +4,7 @@ require 'rspec'
 require 'yaml'
 require 'rubypress'
 require 'erb'
+require_relative 'vcr_setup'
 
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.

@@ -44,15 +44,14 @@ module Rubypress
       opts = {
         :blog_id => 0,
         :username => self.username,
-        :password => self.password,
-        :options => []
-      }.merge(options)
+        :password => self.password
+      }.deep_merge(options)
       self.connection.call(
         "wp.getOptions", 
         opts[:blog_id], 
         opts[:username],
         opts[:password],
-        opts[:options]
+        opts[:options] = nil
       )
     end
 
@@ -513,7 +512,6 @@ module Rubypress
       }.deep_merge(options)
       self.connection.call(
         "wp.getUsersBlogs",
-        opts[:blog_id], 
         opts[:username],
         opts[:password]
       )
