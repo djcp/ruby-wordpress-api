@@ -51,7 +51,7 @@ module Rubypress
         opts[:blog_id], 
         opts[:username],
         opts[:password],
-        opts[:options] = nil
+        (opts[:options] if !opts[:options].nil?)
       )
     end
 
@@ -70,7 +70,7 @@ module Rubypress
         opts[:username],
         opts[:password],
         opts[:post_id],
-        opts[:fields]
+        (opts[:fields] if !opts[:fields].nil?)
       )
     end
 
@@ -79,28 +79,20 @@ module Rubypress
         :blog_id => 0,
         :username => self.username,
         :password => self.password,
-        :post_type => 'post',
-        :post_status => 'publish',
-        :number => 10,
-        :offset => 0,
-        :orderby => 'post_date',
-        :order => 'asc',
-        :fields => self.default_post_fields
-      }.merge(options)
+        :filter => {
+          :post_type => 'post',
+          :orderby => 'post_date',
+          :order => 'asc',
+          :fields => self.default_post_fields
+        }
+      }.deep_merge(options)
       self.connection.call(
         "wp.getPosts", 
         opts[:blog_id], 
         opts[:username],
         opts[:password],
-        {
-          :post_type => opts[:post_type], 
-          :post_status => opts[:post_status],
-          :number => opts[:number],
-          :offset => opts[:offset],
-          :orderby => opts[:orderby],
-          :order => opts[:order]
-        },
-        opts[:fields]
+        (opts[:filter] if !opts[:filter].nil?),
+        (opts[:fields] if !opts[:fields].nil?)
       )
     end
 
@@ -242,16 +234,18 @@ module Rubypress
       opts = {
         :blog_id => 0,
         :username => self.username,
-        :password => self.password,
-        :taxonomy => "categories"
+        :password => self.password
       }.deep_merge(options)
-      self.connection.call(
-        "wp.getTerm", 
-        opts[:blog_id], 
+      args = [opts[:blog_id], 
         opts[:username],
         opts[:password],
         opts[:taxonomy],
         opts[:term_id]
+        ]
+      args.push(opts[:filter]) if !opts[:filter].nil?
+      self.connection.call(
+        "wp.getTerm", 
+        args
       )
     end
 
@@ -262,13 +256,15 @@ module Rubypress
         :password => self.password,
         :taxonomy => "categories"
       }.deep_merge(options)
+      args = [opts[:blog_id], 
+      opts[:username],
+      opts[:password],
+      opts[:taxonomy]
+      ]
+      args.push(opts[:filter]) if !opts[:filter].nil?
       self.connection.call(
-        "wp.getTerms", 
-        opts[:blog_id], 
-        opts[:username],
-        opts[:password],
-        opts[:taxonomy],
-        opts[:filter]
+        "wp.getTerms",
+        args
       )
     end
 
