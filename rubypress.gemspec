@@ -12,8 +12,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 1.9.2"
 
-  s.files = [
-    "lib/rubypress.rb",
-    "lib/rubypress/client.rb"
-  ]
+  s.files = "lib/rubypress.rb"
+  s.files += Dir["lib/rubypress/**"]
+  
 end
