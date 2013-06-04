@@ -2,22 +2,30 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Rubypress" do
 
-  it '#initialize' do
-   init_wp_admin_connection.class.should == Rubypress::Client
+  let(:client){ Rubypress::Client.new(:host => ENV['WORDPRESS_HOST'], :port => 80, :username => ENV['WORDPRESS_USERNAME'], :password => ENV['WORDPRESS_PASSWORD'], :use_ssl => false)
+ }
+  let(:invalid_client){ Rubypress::Client.new(:host => ENV['WORDPRESS_HOST'], :port => 80, :username => "wrongjf3290fh0tbf34fhjvih", :password => ENV['WORDPRESS_PASSWORD'], :use_ssl => false)
+ }
+
+  describe "client" do
+
+    it '#initialize' do
+     client.class.should == Rubypress::Client
+    end
+
   end
 
   it '#getOptions' do
     VCR.use_cassette("getOptions", :record => :new_episodes) do
-      init_wp_admin_connection.class.should == Rubypress::Client
-      init_wp_admin_connection.connection.class.should == XMLRPC::Client
-      init_wp_admin_connection.getOptions.class.should == Hash
-      expect { init_wp_invalid_connection.getOptions }.to raise_error
+      client.class.should == Rubypress::Client
+      client.connection.class.should == XMLRPC::Client
+      client.getOptions.class.should == Hash
+      expect { invalid_client.getOptions }.to raise_error
     end
   end
 
   it '#getPosts #getPost' do
     VCR.use_cassette("getPosts", :record => :new_episodes) do
-      client = init_wp_admin_connection
       posts = client.getPosts(:number => 1)
       posts.class.should == Array
 
@@ -28,10 +36,9 @@ describe "Rubypress" do
 
   it '#newPost #getUsersBlogs' do
     VCR.use_cassette("getUsersBlogs", :record => :new_episodes) do
-      client = init_wp_admin_connection
       user_blogs = client.getUsersBlogs
       blog_id = user_blogs[0]["blogid"]
-      init_wp_admin_connection.newPost(:blog_id => blog_id, :content => { :post_title => "Test post", :post_content => "This a great test.", :post_type => "post"}).class.should == String
+      client.newPost(:blog_id => blog_id, :content => { :post_title => "Test post", :post_content => "This a great test.", :post_type => "post"}).class.should == String
     end
   end
 

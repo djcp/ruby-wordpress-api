@@ -241,4 +241,51 @@ http_interactions:
         ICAgIDwvcGFyYW0+CiAgPC9wYXJhbXM+CjwvbWV0aG9kUmVzcG9uc2U+Cg==
     http_version: 
   recorded_at: Wed, 15 May 2013 14:42:57 GMT
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>wrongjf3290fh0tbf34fhjvih</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '280'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 04 Jun 2013 19:07:59 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '403'
+      Connection:
+      - keep-alive
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <fault>\n
+        \   <value>\n      <struct>\n        <member>\n          <name>faultCode</name>\n
+        \         <value><int>403</int></value>\n        </member>\n        <member>\n
+        \         <name>faultString</name>\n          <value><string>Incorrect username
+        or password.</string></value>\n        </member>\n      </struct>\n    </value>\n
+        \ </fault>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2013 19:07:59 GMT
 recorded_with: VCR 2.4.0

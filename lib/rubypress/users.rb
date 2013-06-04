@@ -1,5 +1,9 @@
 module Users
-  
+
+  def getUsersBlogs
+    self.connection.call("wp.getUsersBlogs", self.username, self.password)
+  end
+
   def getUser(options = {})
     default_options = {
       :user_id => nil,
