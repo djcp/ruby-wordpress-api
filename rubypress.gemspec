@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.platform          = Gem::Platform::RUBY
   s.author            = "Zach Feldman"
   s.email             = ["zachfeldman@gmail.com"]
-  s.homepage          = "https://github.com/zachfeldman/ruby-wordpress-api"
+  s.homepage          = "https://github.com/zachfeldman/rubypress"
   s.summary           = "Easily access WordPress installations through the WordPress XML-RPC API."
   s.description       = "Easily push to WordPress installations through the WordPress XML-RPC API. This gem exactly mirrors the functionality provided by the WordPress XML-RPC API."
 
