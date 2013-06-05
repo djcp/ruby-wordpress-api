@@ -1,4 +1,4 @@
-module Post
+module Posts
 
   def getPost(options = {})
     default_options = {

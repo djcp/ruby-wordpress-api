@@ -1,6 +1,6 @@
 require 'yaml'
 require 'erb'
-require_relative "post"
+require_relative "posts"
 require_relative "taxonomies"
 require_relative "media"
 require_relative "comments"
@@ -53,7 +53,7 @@ module Rubypress
       end
     end
 
-    include Post
+    include Posts
     include Taxonomies
     include Media
     include Comments

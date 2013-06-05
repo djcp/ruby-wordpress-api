@@ -2,13 +2,13 @@ $LOAD_PATH.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name              = "rubypress"
-  s.version           = "0.0.2"
+  s.version           = "1.0.0"
   s.platform          = Gem::Platform::RUBY
-  s.author            = "Daniel Collis-Puro"
-  s.email             = ["djcp@thoughtbot.com"]
-  s.homepage          = "https://github.com/djcp/ruby-wordpress-api"
-  s.summary           = "Easily access WordPress installations."
-  s.description       = "Easily push to WordPress installations through the WordPress XML-RPC API."
+  s.author            = "Zach Feldman"
+  s.email             = ["zachfeldman@gmail.com"]
+  s.homepage          = "https://github.com/zachfeldman/ruby-wordpress-api"
+  s.summary           = "Easily access WordPress installations through the WordPress XML-RPC API."
+  s.description       = "Easily push to WordPress installations through the WordPress XML-RPC API. This gem exactly mirrors the functionality provided by the WordPress XML-RPC API."
 
   s.required_ruby_version = ">= 1.9.2"
 

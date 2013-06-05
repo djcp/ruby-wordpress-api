@@ -7,3 +7,6 @@ require_relative 'vcr_setup'
 RSpec.configure do |config|
 
 end
+
+CLIENT = Rubypress::Client.new(:host => ENV['WORDPRESS_HOST'], :port => 80, :username => ENV['WORDPRESS_USERNAME'], :password => ENV['WORDPRESS_PASSWORD'], :use_ssl => false)
+STRING_NUMBER_REGEX = /^[-+]?[0-9]+$/
