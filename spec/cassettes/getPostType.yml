@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getPostType</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><string>post</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '350'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 05 Jun 2013 15:19:02 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '1627'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <struct>\n  <member><name>name</name><value><string>post</string></value></member>\n
+        \ <member><name>label</name><value><string>Posts</string></value></member>\n
+        \ <member><name>hierarchical</name><value><boolean>0</boolean></value></member>\n
+        \ <member><name>public</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>show_ui</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>_builtin</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>has_archive</name><value><boolean>0</boolean></value></member>\n
+        \ <member><name>supports</name><value><struct>\n  <member><name>title</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>editor</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>author</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>thumbnail</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>excerpt</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>trackbacks</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>custom-fields</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>comments</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>revisions</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>post-formats</name><value><boolean>1</boolean></value></member>\n
+        \ <member><name>geo-location</name><value><boolean>1</boolean></value></member>\n</struct></value></member>\n</struct>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 05 Jun 2013 15:19:03 GMT
+recorded_with: VCR 2.5.0

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getMediaLibrary</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><struct/></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '305'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 04 Jun 2013 21:08:52 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '2213'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>attachment_id</name><value><string>129</string></value></member>\n
+        \ <member><name>date_created_gmt</name><value><dateTime.iso8601>20130529T19:47:11</dateTime.iso8601></value></member>\n
+        \ <member><name>parent</name><value><int>128</int></value></member>\n  <member><name>link</name><value><string>http://cthisisatest.files.wordpress.com/2013/05/8yi9e3i.jpg</string></value></member>\n
+        \ <member><name>title</name><value><string>8yI9E3I</string></value></member>\n
+        \ <member><name>caption</name><value><string></string></value></member>\n
+        \ <member><name>description</name><value><string></string></value></member>\n
+        \ <member><name>metadata</name><value><struct>\n  <member><name>width</name><value><int>1848</int></value></member>\n
+        \ <member><name>height</name><value><int>2970</int></value></member>\n  <member><name>file</name><value><string>/home/wpcom/public_html/wp-content/blogs.dir/3dd/47989391/files/2013/05/8yi9e3i.jpg</string></value></member>\n
+        \ <member><name>sizes</name><value><array><data>\n</data></array></value></member>\n
+        \ <member><name>image_meta</name><value><struct>\n  <member><name>aperture</name><value><int>0</int></value></member>\n
+        \ <member><name>credit</name><value><string></string></value></member>\n  <member><name>camera</name><value><string></string></value></member>\n
+        \ <member><name>caption</name><value><string></string></value></member>\n
+        \ <member><name>created_timestamp</name><value><int>0</int></value></member>\n
+        \ <member><name>copyright</name><value><string></string></value></member>\n
+        \ <member><name>focal_length</name><value><int>0</int></value></member>\n
+        \ <member><name>iso</name><value><int>0</int></value></member>\n  <member><name>shutter_speed</name><value><int>0</int></value></member>\n
+        \ <member><name>title</name><value><string></string></value></member>\n</struct></value></member>\n</struct></value></member>\n
+        \ <member><name>thumbnail</name><value><string>http://cthisisatest.files.wordpress.com/2013/05/8yi9e3i.jpg?w=93</string></value></member>\n</struct></value>\n</data></array>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2013 21:08:52 GMT
+recorded_with: VCR 2.4.0

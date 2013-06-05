@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getTerm</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><string>category</string></value><value><i4>1</i4></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '338'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 05 Jun 2013 15:27:17 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '865'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <struct>\n  <member><name>term_id</name><value><string>1</string></value></member>\n
+        \ <member><name>name</name><value><string>Uncategorized</string></value></member>\n
+        \ <member><name>slug</name><value><string>uncategorized</string></value></member>\n
+        \ <member><name>term_group</name><value><string>0</string></value></member>\n
+        \ <member><name>term_taxonomy_id</name><value><string>1</string></value></member>\n
+        \ <member><name>taxonomy</name><value><string>category</string></value></member>\n
+        \ <member><name>description</name><value><string></string></value></member>\n
+        \ <member><name>parent</name><value><string>0</string></value></member>\n
+        \ <member><name>count</name><value><int>2</int></value></member>\n</struct>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 05 Jun 2013 15:27:17 GMT
+recorded_with: VCR 2.5.0

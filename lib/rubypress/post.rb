@@ -47,7 +47,7 @@ module Post
       :post_type_name => nil,
       :fields => []
     }.deep_merge!(options)
-    execute("getPostTypes", default_options)
+    execute("getPostType", default_options)
   end
 
    def getPostTypes(options = {})

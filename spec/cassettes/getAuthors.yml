@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getAuthors</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '276'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 05 Jun 2013 15:46:25 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '763'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>user_id</name><value><string>46917508</string></value></member>\n
+        \ <member><name>user_login</name><value><string>contently</string></value></member>\n
+        \ <member><name>display_name</name><value><string>contently</string></value></member>\n</struct></value>\n
+        \ <value><struct>\n  <member><name>user_id</name><value><string>33483367</string></value></member>\n
+        \ <member><name>user_login</name><value><string>zachfeldman</string></value></member>\n
+        \ <member><name>display_name</name><value><string>zachfeldman</string></value></member>\n</struct></value>\n</data></array>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Wed, 05 Jun 2013 15:46:25 GMT
+recorded_with: VCR 2.5.0

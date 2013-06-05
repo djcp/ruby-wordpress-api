@@ -2,7 +2,7 @@ module Taxonomies
 
   def getTaxonomy(options = {})
     default_options = {
-      :taxonomy => "categories"
+      :taxonomy => "category"
     }.deep_merge!(options)
     execute("getTaxonomy", default_options)
   end
@@ -13,7 +13,7 @@ module Taxonomies
 
   def getTerm(options = {})
     default_options = {
-      :taxonomy => "categories",
+      :taxonomy => "category",
       :term_id => nil
     }.deep_merge!(options)
     execute("getTerm", default_options)
@@ -21,7 +21,7 @@ module Taxonomies
 
   def getTerms(options = {})
     default_options = {
-      :taxonomy => "categories",
+      :taxonomy => "category",
       :filter => {}
     }.deep_merge!(options)
     execute("getTerms", default_options)
@@ -33,14 +33,6 @@ module Taxonomies
     }.deep_merge!(options)
     execute("newTerm", default_options)
   end
-
-  def editTerm(options = {})
-    default_options = {
-      :content => {}
-    }.deep_merge!(options)
-    execute("newTerm", default_options)
-  end
-
 
   def editTerm(options = {})
     default_options = {

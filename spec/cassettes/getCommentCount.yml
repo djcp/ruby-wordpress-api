@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getCommentCount</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><i4>134</i4></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '308'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 04 Jun 2013 20:27:15 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '467'
+      Connection:
+      - keep-alive
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <struct>\n  <member><name>approved</name><value><string>1</string></value></member>\n
+        \ <member><name>awaiting_moderation</name><value><int>0</int></value></member>\n
+        \ <member><name>spam</name><value><int>0</int></value></member>\n  <member><name>total_comments</name><value><int>1</int></value></member>\n</struct>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2013 20:27:15 GMT
+recorded_with: VCR 2.4.0

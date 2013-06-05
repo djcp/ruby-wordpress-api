@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: US-ASCII
+      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getComments</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><struct/></value></data></array></value></param></params></methodCall>
+
+'
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 1.9.3)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '301'
+      Connection:
+      - keep-alive
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 04 Jun 2013 20:49:29 GMT
+      Content-Type:
+      - text/xml; charset=UTF-8
+      Content-Length:
+      - '4159'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Hacker:
+      - If you're reading this, you should visit automattic.com/jobs and apply to
+        join the fun, mention this header.
+    body:
+      encoding: US-ASCII
+      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
+        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>date_created_gmt</name><value><dateTime.iso8601>20130604T20:47:50</dateTime.iso8601></value></member>\n
+        \ <member><name>user_id</name><value><string>46917508</string></value></member>\n
+        \ <member><name>comment_id</name><value><string>3</string></value></member>\n
+        \ <member><name>parent</name><value><string>0</string></value></member>\n
+        \ <member><name>status</name><value><string>approve</string></value></member>\n
+        \ <member><name>content</name><value><string>This is a test thing here.</string></value></member>\n
+        \ <member><name>link</name><value><string>http://WORDPRESS_HOST/2013/05/30/2013-hair-color-get-the-look/comment-page-1/#comment-3</string></value></member>\n
+        \ <member><name>post_id</name><value><string>134</string></value></member>\n
+        \ <member><name>post_title</name><value><string>2013 Hair Color: Get the&amp;nbsp;Look</string></value></member>\n
+        \ <member><name>author</name><value><string>contently</string></value></member>\n
+        \ <member><name>author_url</name><value><string>http://WORDPRESS_HOST</string></value></member>\n
+        \ <member><name>author_email</name><value><string>WORDPRESS_USERNAME</string></value></member>\n
+        \ <member><name>author_ip</name><value><string>184.75.98.7</string></value></member>\n
+        \ <member><name>type</name><value><string></string></value></member>\n</struct></value>\n
+        \ <value><struct>\n  <member><name>date_created_gmt</name><value><dateTime.iso8601>20130604T20:46:25</dateTime.iso8601></value></member>\n
+        \ <member><name>user_id</name><value><string>46917508</string></value></member>\n
+        \ <member><name>comment_id</name><value><string>2</string></value></member>\n
+        \ <member><name>parent</name><value><string>0</string></value></member>\n
+        \ <member><name>status</name><value><string>approve</string></value></member>\n
+        \ <member><name>content</name><value><string>This is a test comment.</string></value></member>\n
+        \ <member><name>link</name><value><string>http://WORDPRESS_HOST/about/comment-page-1/#comment-2</string></value></member>\n
+        \ <member><name>post_id</name><value><string>1</string></value></member>\n
+        \ <member><name>post_title</name><value><string>About</string></value></member>\n
+        \ <member><name>author</name><value><string>contently</string></value></member>\n
+        \ <member><name>author_url</name><value><string>http://WORDPRESS_HOST</string></value></member>\n
+        \ <member><name>author_email</name><value><string>WORDPRESS_USERNAME</string></value></member>\n
+        \ <member><name>author_ip</name><value><string>184.75.98.7</string></value></member>\n
+        \ <member><name>type</name><value><string></string></value></member>\n</struct></value>\n
+        \ <value><struct>\n  <member><name>date_created_gmt</name><value><dateTime.iso8601>20130604T20:07:46</dateTime.iso8601></value></member>\n
+        \ <member><name>user_id</name><value><string>46917508</string></value></member>\n
+        \ <member><name>comment_id</name><value><string>1</string></value></member>\n
+        \ <member><name>parent</name><value><string>0</string></value></member>\n
+        \ <member><name>status</name><value><string>approve</string></value></member>\n
+        \ <member><name>content</name><value><string>Comments are fun!</string></value></member>\n
+        \ <member><name>link</name><value><string>http://WORDPRESS_HOST/2013/05/30/2013-hair-color-get-the-look/comment-page-1/#comment-1</string></value></member>\n
+        \ <member><name>post_id</name><value><string>134</string></value></member>\n
+        \ <member><name>post_title</name><value><string>2013 Hair Color: Get the&amp;nbsp;Look</string></value></member>\n
+        \ <member><name>author</name><value><string>contently</string></value></member>\n
+        \ <member><name>author_url</name><value><string>http://WORDPRESS_HOST</string></value></member>\n
+        \ <member><name>author_email</name><value><string>WORDPRESS_USERNAME</string></value></member>\n
+        \ <member><name>author_ip</name><value><string>184.75.98.7</string></value></member>\n
+        \ <member><name>type</name><value><string></string></value></member>\n</struct></value>\n</data></array>\n
+        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+    http_version: 
+  recorded_at: Tue, 04 Jun 2013 20:49:29 GMT
+recorded_with: VCR 2.4.0
