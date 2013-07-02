@@ -29,7 +29,9 @@ module Rubypress
     end
 
     def connection
-      @connection = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,nil,nil,self.use_ssl,nil)
+       server = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,nil,nil,self.use_ssl,nil)
+       server.http_header_extra = {'accept-encoding' => 'identity'}
+       @connection = server
     end
 
     def self.default
