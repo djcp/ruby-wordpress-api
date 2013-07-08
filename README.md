@@ -50,23 +50,24 @@ To make further requests, check out the documentation - this gem should follow t
 
 ## Contributing to rubypress
 
-We could use some help implementing wider testing and cleaning up the client code! Pull requests welcome.
+Pull requests welcome.
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
 * Start a feature/bugfix branch.
 * Commit and push until you are happy with your contribution.
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Make sure to add tests for it. This is important so we don't break it in a future version unintentionally.
 
 
 ## Credits
 
-* Dan Collis-Puro (dan@collispuro.com)
 * Zach Feldman [@zachfeldman](http://twitter.com/zachfeldman)
+* Dan Collis-Puro (dan@collispuro.com)
 
 
-### Copyright and License
+### License
 
-Copyright (c) 2012 Dan Collis-Puro
 Licensed under the same terms as WordPress itself - GPLv2.
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/ed093654d3f4ac89d05750e3def34190 "githalytics.com")](http://githalytics.com/zachfeldman/rubypress)
