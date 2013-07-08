@@ -1,3 +1,9 @@
+= IMPORTANT
+
+Please see [this repo](https://github.com/zachfeldman/rubypress), Zach
+Feldman's maintained (and vastly improved) fork of this project.  All
+future development effort will occur there.
+
 = rubypress
 
 This implements the WordPress xmlrpc api as released in version 3.4.
