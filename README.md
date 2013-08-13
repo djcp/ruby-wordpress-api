@@ -1,5 +1,7 @@
 # rubypress
 
+[![Gem Version](https://badge.fury.io/rb/rubypress.png)](http://badge.fury.io/rb/rubypress)
+
 This implements the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API) as released in version 3.4.
 
 WARNING: SSL is NOT enabled by default for ease of testing for those running OS X systems without setup SSL certs. If this is important to you, checkout the options for instantiating a new client where you can set :use_ssl to true.
@@ -11,15 +13,13 @@ WARNING: SSL is NOT enabled by default for ease of testing for those running OS 
 
     A. To your system
     
-    `gem install specific_install`  
-    
-    `gem specific_install -l https://github.com/zachfeldman/ruby-wordpress-api.git`
+    `gem install rubypress`
 
     B. Or using Bundler
 
     Inside your Gemfile:
 
-    `gem "ruby-wordpress-api", :git => https://github.com/zachfeldman/ruby-wordpress-api.git`
+    `gem 'rubypress'`
 
 2. Create a new client
 
