@@ -9,7 +9,7 @@ WARNING: SSL is NOT enabled by default for ease of testing for those running OS 
 
 ## Getting Started
 
-1. Install the gem using specific_install or Bundler
+1. Install the gem
 
     A. To your system
     
@@ -24,28 +24,26 @@ WARNING: SSL is NOT enabled by default for ease of testing for those running OS 
 2. Create a new client
 
    ```ruby
-   >wp = Rubypress::Client.new(:host => "yourwordpresssite.com", :username => "yourwordpressuser@wordpress.com", :password => "yourwordpresspassword")
+   > wp = Rubypress::Client.new(:host => "yourwordpresssite.com", :username => "yourwordpressuser@wordpress.com", :password => "yourwordpresspassword")
    ```
 
 3. Make requests based off of the [WordPress XML RPC API Documentation](http://codex.wordpress.org/XML-RPC_WordPress_API)
 
     ```ruby
-    >wp.getOptions
+    > wp.getOptions
 
     => {"software_name"=>{"desc"=>"Software Name", "readonly"=>true, "value"=>"WordPress"}
     ```
-
-    (just a small excerpt of actual options for the sake of the whole brevity thing)`
+    (just a small excerpt of actual options for the sake of the whole [brevity thing](http://3-akamai.tapcdn.com/images/thumbs/taps/2012/06/demotivational-poster-the-dude-or-the-dude-his-dudeness-el-duderino-if-you-re-not-into-the-whole-brevity-thing-3410281f-sz640x523-animate.jpg))
 
     ```ruby
-    >wp.newPost(:blog_id => "your_blog_id", :content => { :post_status => "publish", :post_date => Time.now, :post_content => "What an awesome post", :post_title => "Woo Title" })  
-
+    > wp.newPost(:blog_id => "your_blog_id", :content => { :post_status => "publish", :post_date => Time.now, :post_content => "What an awesome post", :post_title => "Woo Title" })  
     => "24"  
     ```
 
     (returns a post ID if post was successful)
 
-To make further requests, check out the documentation - this gem should follow the exact format of the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API).
+To make further requests, check out the documentation - this gem should follow the exact format of the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API). For even further clarification on what requests are available, take a look in the spec folder.
 
 
 ## Contributing to rubypress
@@ -58,7 +56,7 @@ Pull requests welcome.
 * Start a feature/bugfix branch.
 * Commit and push until you are happy with your contribution.
 * Make sure to add tests for it. This is important so we don't break it in a future version unintentionally.
-
+* Submit a pull request
 
 ## Credits
 
