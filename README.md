@@ -67,5 +67,5 @@ Pull requests welcome.
 ### License
 
 Licensed under the same terms as WordPress itself - GPLv2.
-
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/ed093654d3f4ac89d05750e3def34190 "githalytics.com")](http://githalytics.com/zachfeldman/rubypress)
+<!-- 
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/ed093654d3f4ac89d05750e3def34190 "githalytics.com")](http://githalytics.com/zachfeldman/rubypress) -->
