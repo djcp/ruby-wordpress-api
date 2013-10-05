@@ -1,11 +1,11 @@
 require 'yaml'
 require 'erb'
-require_relative "posts"
-require_relative "taxonomies"
-require_relative "media"
-require_relative "comments"
-require_relative "options"
-require_relative "users"
+require_relative 'posts'
+require_relative 'taxonomies'
+require_relative 'media'
+require_relative 'comments'
+require_relative 'options'
+require_relative 'users'
 
 module Rubypress
 
@@ -22,7 +22,7 @@ module Rubypress
         :path => '/xmlrpc.php',
         :username => nil,
         :password => nil,
-        :default_post_fields => ['post','terms','custom_fields'],
+        :default_post_fields => %w(post terms custom_fields),
         :debug => false
       }.merge(options).each{ |opt| self.send("#{opt[0]}=", opt[1]) }
       self
