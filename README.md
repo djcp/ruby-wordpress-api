@@ -60,12 +60,16 @@ Pull requests welcome.
 
 ## Credits
 
-* Zach Feldman [@zachfeldman](http://twitter.com/zachfeldman)
+* Zach Feldman [@zachfeldman](http://zfeldman.com)
 * Dan Collis-Puro (dan@collispuro.com)
 
+## Contributors
 
-### License
+* Abdelkader Boudih [@seuros](https://github.com/seuros)
+
+## License
 
 Licensed under the same terms as WordPress itself - GPLv2.
+
 <!-- 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/ed093654d3f4ac89d05750e3def34190 "githalytics.com")](http://githalytics.com/zachfeldman/rubypress) -->
