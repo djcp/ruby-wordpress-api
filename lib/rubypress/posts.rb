@@ -5,7 +5,7 @@ module Posts
       :post_id => nil,
       :fields => self.default_post_fields
     }.deep_merge!(options)
-    execute("getPost", default_options)
+    execute('getPost', default_options)
   end
 
   def getPosts(options = {})
@@ -17,14 +17,14 @@ module Posts
         :fields => self.default_post_fields
       }
     }.deep_merge!(options)
-    execute("getPosts", default_options)
+    execute('getPosts', default_options)
   end
 
   def newPost(options = {})
     default_options = {
       :content => {}
     }.deep_merge!(options)
-    execute("newPost", default_options)
+    execute('newPost', default_options)
   end
 
   def editPost(options = {})
@@ -32,14 +32,14 @@ module Posts
       :post_id => nil,
       :content => {}
     }.deep_merge!(options)
-    execute("editPost", default_options)
+    execute('editPost', default_options)
   end
 
   def deletePost(options = {})
     default_options = {
       :post_id => nil
     }.deep_merge!(options)
-    execute("deletePost", default_options)
+    execute('deletePost', default_options)
   end
 
   def getPostType(options = {})
@@ -47,7 +47,7 @@ module Posts
       :post_type_name => nil,
       :fields => []
     }.deep_merge!(options)
-    execute("getPostType", default_options)
+    execute('getPostType', default_options)
   end
 
    def getPostTypes(options = {})
@@ -55,18 +55,18 @@ module Posts
       :filter => {},
       :fields => []
     }.deep_merge!(options)
-    execute("getPostTypes", default_options)
+    execute('getPostTypes', default_options)
   end
 
   def getPostFormats(options = {})
     default_options = {
       :filter => {}
     }.deep_merge!(options)
-    execute("getPostFormats", default_options)
+    execute('getPostFormats', default_options)
   end
 
   def getPostStatusList(options = {})
-    execute("getPostFormats", options)
+    execute('getPostFormats', options)
   end
 
 end
