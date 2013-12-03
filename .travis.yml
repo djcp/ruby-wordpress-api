@@ -1,0 +1,8 @@
+language: ruby
+rvm:
+- ruby-2.0.0-p353
+env:
+  global:
+  - secure: EtfvMbqvxv0TTqC54x9IsBz5reJtBvmfRTAZbtZhvq6D6VNOsN2mCH7xkwR0qwIH8x66r1TJ+yTmcNfEPQWBZprFbGegGlZVhaKHwEqBaKJX11eaRA7PK50VxNyxmIqmVMhp3Cp8+x+L6augOEsP6ISWZndXYESxynWl+dzCz1g=
+  - secure: PF0+XvqhUtIAq4QKQD/iYod3heXzkB/O3lsy9aajbvQ4L8IM1ofMSvRDxTvrVyHycok7QGDhiBylrTBo51NK0VOtwA16Ig6P5EKLWSLEAVk0D9Z5RujshVnghRghp8kQWuupUhk/0u525bgADfwTSazx6jwPDimDanRdIjNO/tg=
+  - secure: M9bNHH+NYvUbmCaDGbrLIeI9t7ihWvS5vkYQ31pmDUbfTpBbJmFjX9GoKXAuXfiHAPQXZx1cUdVusZqWOJ1RQtvnngrdjZjXhA3ufitgShAMskWnAECWGFBCbr13Qv/IOl0y2qGvLiD5EWxog/A0BWCaiqJku6phzD7W4b4RwmE=

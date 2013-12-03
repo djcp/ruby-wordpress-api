@@ -2,6 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/rubypress.png)](http://badge.fury.io/rb/rubypress)
 
+[![Build Status](https://travis-ci.org/zachfeldman/rubypress.png)](https://travis-ci.org/zachfeldman/rubypress)
+
 This implements the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API) as released in version 3.4.
 
 WARNING: SSL is NOT enabled by default for ease of testing for those running OS X systems without setup SSL certs. If this is important to you, checkout the options for instantiating a new client where you can set :use_ssl to true.
@@ -76,6 +78,7 @@ Pull requests welcome.
 
 * Abdelkader Boudih [@seuros](https://github.com/seuros) (Removed deep_merge monkeypatch if ActiveSupport is defined, small refactors)
 * Alex Dantas [@alexdantas](https://github.com/alexdantas) (README edits re: host option)
+* Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
 
 ## License
 
