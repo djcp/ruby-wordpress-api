@@ -76,14 +76,16 @@ The test suite requires that the following environment variables
 * WORDPRESS_HOST
 * WORDPRESS_USERNAME
 * WORDPRESS_PASSWORD
-+
-Optionally, you can create a file in the working directory calle
+
+Optionally, you can create a file in the working directory called _.env_ and add the following to it:
 
 ```
 WORDPRESS_HOST=myhostedwordpresssite.net
 WORDPRESS_USERNAME=yourwordpressuser@wordpress.com
 WORDPRESS_PASSWORD=yourwordpresspassword
 ```
+
+When RSpec runs it will set the environment variables for you.
 
 ## Credits
 
