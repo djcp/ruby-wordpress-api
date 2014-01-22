@@ -69,6 +69,22 @@ Pull requests welcome.
 * Make sure to add tests for it. This is important so we don't break it in a future version unintentionally.
 * Submit a pull request
 
+### Environment Variables
+
+The test suite requires that the following environment variables
+
+* WORDPRESS_HOST
+* WORDPRESS_USERNAME
+* WORDPRESS_PASSWORD
++
+Optionally, you can create a file in the working directory calle
+
+```
+WORDPRESS_HOST=myhostedwordpresssite.net
+WORDPRESS_USERNAME=yourwordpressuser@wordpress.com
+WORDPRESS_PASSWORD=yourwordpresspassword
+```
+
 ## Credits
 
 * Zach Feldman [@zachfeldman](http://zfeldman.com)
@@ -79,6 +95,7 @@ Pull requests welcome.
 * Abdelkader Boudih [@seuros](https://github.com/seuros) (Removed deep_merge monkeypatch if ActiveSupport is defined, small refactors)
 * Alex Dantas [@alexdantas](https://github.com/alexdantas) (README edits re: host option)
 * Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
+* David Muto [@pseudomoto](https://github.com/pseudomoto) (Added ability to use a .env file.)
 
 ## License
 
