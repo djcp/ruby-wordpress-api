@@ -12,7 +12,7 @@ module Rubypress
   class Client
 
     attr_reader :connection
-    attr_accessor :port, :host, :path, :username, :password, :use_ssl, :default_post_fields, :debug
+    attr_accessor :port, :host, :path, :username, :password, :use_ssl, :default_post_fields, :debug, :http_user, :http_password
 
     def initialize(options = {})
       {
@@ -23,13 +23,15 @@ module Rubypress
         :username => nil,
         :password => nil,
         :default_post_fields => %w(post terms custom_fields),
-        :debug => false
+        :debug => false,
+        :http_user => nil,
+        :http_password => nil
       }.merge(options).each{ |opt| self.send("#{opt[0]}=", opt[1]) }
       self
     end
 
     def connection
-       server = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,nil,nil,self.use_ssl,nil)
+       server = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
        server.http_header_extra = {'accept-encoding' => 'identity'}
        @connection = server
     end
