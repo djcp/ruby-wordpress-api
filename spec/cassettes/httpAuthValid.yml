@@ -1,0 +1,183 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HTTP_USER:WORDPRESS_HTTP_PASSWORD@WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '304'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - identity
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Jan 2014 13:24:23 GMT
+      Server:
+      - Apache/2.2.16 (Debian)
+      X-Powered-By:
+      - PHP/5.3.3-7+squeeze14
+      Connection:
+      - close
+      Content-Length:
+      - '8203'
+      Vary:
+      - Accept-Encoding
+      Content-Type:
+      - text/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <struct>
+          <member><name>software_name</name><value><struct>
+          <member><name>desc</name><value><string>Software Name</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>WordPress</string></value></member>
+        </struct></value></member>
+          <member><name>software_version</name><value><struct>
+          <member><name>desc</name><value><string>Software Version</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>3.5.1</string></value></member>
+        </struct></value></member>
+          <member><name>blog_url</name><value><struct>
+          <member><name>desc</name><value><string>Site URL</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>http://WORDPRESS_HOST</string></value></member>
+        </struct></value></member>
+          <member><name>home_url</name><value><struct>
+          <member><name>desc</name><value><string>Home URL</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>http://WORDPRESS_HOST</string></value></member>
+        </struct></value></member>
+          <member><name>image_default_link_type</name><value><struct>
+          <member><name>desc</name><value><string>Image default link type</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>file</string></value></member>
+        </struct></value></member>
+          <member><name>image_default_size</name><value><struct>
+          <member><name>desc</name><value><string>Image default size</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string></string></value></member>
+        </struct></value></member>
+          <member><name>image_default_align</name><value><struct>
+          <member><name>desc</name><value><string>Image default align</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string></string></value></member>
+        </struct></value></member>
+          <member><name>template</name><value><struct>
+          <member><name>desc</name><value><string>Template</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>twentyeleven</string></value></member>
+        </struct></value></member>
+          <member><name>stylesheet</name><value><struct>
+          <member><name>desc</name><value><string>Stylesheet</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>twentyeleven</string></value></member>
+        </struct></value></member>
+          <member><name>post_thumbnail</name><value><struct>
+          <member><name>desc</name><value><string>Post Thumbnail</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><boolean>1</boolean></value></member>
+        </struct></value></member>
+          <member><name>time_zone</name><value><struct>
+          <member><name>desc</name><value><string>Time Zone</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>0</string></value></member>
+        </struct></value></member>
+          <member><name>blog_title</name><value><struct>
+          <member><name>desc</name><value><string>Site Title</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>Demo WP</string></value></member>
+        </struct></value></member>
+          <member><name>blog_tagline</name><value><struct>
+          <member><name>desc</name><value><string>Site Tagline</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>Just another WordPress site</string></value></member>
+        </struct></value></member>
+          <member><name>date_format</name><value><struct>
+          <member><name>desc</name><value><string>Date Format</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>F j, Y</string></value></member>
+        </struct></value></member>
+          <member><name>time_format</name><value><struct>
+          <member><name>desc</name><value><string>Time Format</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>g:i a</string></value></member>
+        </struct></value></member>
+          <member><name>users_can_register</name><value><struct>
+          <member><name>desc</name><value><string>Allow new users to sign up</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><boolean>0</boolean></value></member>
+        </struct></value></member>
+          <member><name>thumbnail_size_w</name><value><struct>
+          <member><name>desc</name><value><string>Thumbnail Width</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>150</string></value></member>
+        </struct></value></member>
+          <member><name>thumbnail_size_h</name><value><struct>
+          <member><name>desc</name><value><string>Thumbnail Height</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>150</string></value></member>
+        </struct></value></member>
+          <member><name>thumbnail_crop</name><value><struct>
+          <member><name>desc</name><value><string>Crop thumbnail to exact dimensions</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>1</string></value></member>
+        </struct></value></member>
+          <member><name>medium_size_w</name><value><struct>
+          <member><name>desc</name><value><string>Medium size image width</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>300</string></value></member>
+        </struct></value></member>
+          <member><name>medium_size_h</name><value><struct>
+          <member><name>desc</name><value><string>Medium size image height</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>300</string></value></member>
+        </struct></value></member>
+          <member><name>large_size_w</name><value><struct>
+          <member><name>desc</name><value><string>Large size image width</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>1024</string></value></member>
+        </struct></value></member>
+          <member><name>large_size_h</name><value><struct>
+          <member><name>desc</name><value><string>Large size image height</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>1024</string></value></member>
+        </struct></value></member>
+          <member><name>default_comment_status</name><value><struct>
+          <member><name>desc</name><value><string>Allow people to post comments on new articles</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>open</string></value></member>
+        </struct></value></member>
+          <member><name>default_ping_status</name><value><struct>
+          <member><name>desc</name><value><string>Allow link notifications from other blogs (pingbacks and trackbacks)</string></value></member>
+          <member><name>readonly</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>open</string></value></member>
+        </struct></value></member>
+        </struct>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version:
+  recorded_at: Wed, 29 Jan 2014 13:24:23 GMT
+recorded_with: VCR 2.5.0

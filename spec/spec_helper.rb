@@ -21,12 +21,20 @@ RSpec.configure do |config|
   load_env
 end
 
-CLIENT = Rubypress::Client.new(
-  :host => ENV['WORDPRESS_HOST'],
+CLIENT_OPTS = {
   :port => 80,
+  :host => ENV['WORDPRESS_HOST'],
   :username => ENV['WORDPRESS_USERNAME'],
   :password => ENV['WORDPRESS_PASSWORD'],
   :use_ssl => false
-)
+}
+
+CLIENT = Rubypress::Client.new( CLIENT_OPTS )
+
+HTTP_AUTH_CLIENT_OPTS = CLIENT_OPTS.merge(
+  :http_user => ENV['WORDPRESS_HTTP_USER'] || 'test',
+  :http_password => ENV['WORDPRESS_HTTP_PASSWORD'] || 'test' )
+
+HTTP_AUTH_CLIENT = Rubypress::Client.new( HTTP_AUTH_CLIENT_OPTS )
 
 STRING_NUMBER_REGEX = /^[-+]?[0-9]+$/

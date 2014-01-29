@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://WORDPRESS_HOST/xmlrpc.php
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '304'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - identity
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 401
+      message: Authorization Required
+    headers:
+      Date:
+      - Wed, 29 Jan 2014 12:37:14 GMT
+      Server:
+      - Apache/2.2.16 (Debian)
+      Www-Authenticate:
+      - Basic realm="Demo WP"
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '484'
+      Keep-Alive:
+      - timeout=1, max=50
+      Connection:
+      - Keep-Alive
+      Content-Type:
+      - text/html; charset=iso-8859-1
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+        <html><head>
+        <title>401 Authorization Required</title>
+        </head><body>
+        <h1>Authorization Required</h1>
+        <p>This server could not verify that you
+        are authorized to access the document
+        requested.  Either you supplied the wrong
+        credentials (e.g., bad password), or your
+        browser doesn't understand how to supply
+        the credentials required.</p>
+        <hr>
+        <address>Apache/2.2.16 (Debian) Server at WORDPRESS_HOST Port 80</address>
+        </body></html>
+    http_version: 
+  recorded_at: Wed, 29 Jan 2014 12:37:13 GMT
+recorded_with: VCR 2.5.0

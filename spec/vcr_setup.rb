@@ -12,4 +12,10 @@ VCR.configure do |c|
   c.filter_sensitive_data("WORDPRESS_HOST") do
     ENV['WORDPRESS_HOST']
   end
+  c.filter_sensitive_data("WORDPRESS_HTTP_USER") do
+    HTTP_AUTH_CLIENT_OPTS[ :http_user ]
+  end
+  c.filter_sensitive_data("WORDPRESS_HTTP_PASSWORD") do
+    HTTP_AUTH_CLIENT_OPTS[ :http_password ]
+  end
 end
