@@ -2,65 +2,233 @@
 http_interactions:
 - request:
     method: post
-    uri: http://WORDPRESS_HOST/xmlrpc.php
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
     body:
-      encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getMediaLibrary</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><struct/></value></data></array></value></param></params></methodCall>
-
-'
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getMediaLibrary</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><struct/></value></data></array></value></param></params></methodCall>
     headers:
       User-Agent:
-      - XMLRPC::Client (Ruby 1.9.3)
+      - XMLRPC::Client (Ruby 2.0.0)
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
-      - '305'
+      - '292'
       Connection:
       - keep-alive
+      Accept-Encoding:
+      - identity
       Accept:
-      - ! '*/*'
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
       Date:
-      - Tue, 04 Jun 2013 21:08:52 GMT
+      - Sat, 08 Feb 2014 23:06:40 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
+      Content-Length:
+      - '14905'
+      Vary:
+      - User-Agent,Accept-Encoding
       Content-Type:
       - text/xml; charset=UTF-8
-      Content-Length:
-      - '2213'
-      Connection:
-      - keep-alive
-      Vary:
-      - Accept-Encoding
-      X-Hacker:
-      - If you're reading this, you should visit automattic.com/jobs and apply to
-        join the fun, mention this header.
     body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
-        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>attachment_id</name><value><string>129</string></value></member>\n
-        \ <member><name>date_created_gmt</name><value><dateTime.iso8601>20130529T19:47:11</dateTime.iso8601></value></member>\n
-        \ <member><name>parent</name><value><int>128</int></value></member>\n  <member><name>link</name><value><string>http://cthisisatest.files.wordpress.com/2013/05/8yi9e3i.jpg</string></value></member>\n
-        \ <member><name>title</name><value><string>8yI9E3I</string></value></member>\n
-        \ <member><name>caption</name><value><string></string></value></member>\n
-        \ <member><name>description</name><value><string></string></value></member>\n
-        \ <member><name>metadata</name><value><struct>\n  <member><name>width</name><value><int>1848</int></value></member>\n
-        \ <member><name>height</name><value><int>2970</int></value></member>\n  <member><name>file</name><value><string>/home/wpcom/public_html/wp-content/blogs.dir/3dd/47989391/files/2013/05/8yi9e3i.jpg</string></value></member>\n
-        \ <member><name>sizes</name><value><array><data>\n</data></array></value></member>\n
-        \ <member><name>image_meta</name><value><struct>\n  <member><name>aperture</name><value><int>0</int></value></member>\n
-        \ <member><name>credit</name><value><string></string></value></member>\n  <member><name>camera</name><value><string></string></value></member>\n
-        \ <member><name>caption</name><value><string></string></value></member>\n
-        \ <member><name>created_timestamp</name><value><int>0</int></value></member>\n
-        \ <member><name>copyright</name><value><string></string></value></member>\n
-        \ <member><name>focal_length</name><value><int>0</int></value></member>\n
-        \ <member><name>iso</name><value><int>0</int></value></member>\n  <member><name>shutter_speed</name><value><int>0</int></value></member>\n
-        \ <member><name>title</name><value><string></string></value></member>\n</struct></value></member>\n</struct></value></member>\n
-        \ <member><name>thumbnail</name><value><string>http://cthisisatest.files.wordpress.com/2013/05/8yi9e3i.jpg?w=93</string></value></member>\n</struct></value>\n</data></array>\n
-        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <array><data>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>39</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T23:06:38</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file17.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file17.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>38</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T23:06:37</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file16.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file16.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>35</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:04:42</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file15.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file15.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>34</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:04:41</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file14.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file14.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>31</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:03:05</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file13.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file13.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>30</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:03:05</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file12.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file12.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>29</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:02:46</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file11.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file11.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>28</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:02:45</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file10.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file10.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>25</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T21:01:08</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file9.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file9.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>22</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T20:28:40</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file8.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file8.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>19</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T20:16:21</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file7.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file7.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>16</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T20:01:42</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file6.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file6.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>15</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T19:46:58</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file5.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file5.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>10</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T19:39:47</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file4.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file4.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>7</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140208T19:30:43</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file3.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file3.png</string></value></member>
+        </struct></value>
+          <value><struct>
+          <member><name>attachment_id</name><value><string>4</string></value></member>
+          <member><name>date_created_gmt</name><value><dateTime.iso8601>20140202T17:03:20</dateTime.iso8601></value></member>
+          <member><name>parent</name><value><int>0</int></value></member>
+          <member><name>link</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file2.png</string></value></member>
+          <member><name>title</name><value><string>test_file.png</string></value></member>
+          <member><name>caption</name><value><string></string></value></member>
+          <member><name>description</name><value><string></string></value></member>
+          <member><name>metadata</name><value><string></string></value></member>
+          <member><name>thumbnail</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file2.png</string></value></member>
+        </struct></value>
+        </data></array>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
     http_version: 
-  recorded_at: Tue, 04 Jun 2013 21:08:52 GMT
-recorded_with: VCR 2.4.0
+  recorded_at: Sat, 08 Feb 2014 23:06:40 GMT
+recorded_with: VCR 2.5.0

@@ -26,14 +26,21 @@ CLIENT_OPTS = {
   :host => ENV['WORDPRESS_HOST'],
   :username => ENV['WORDPRESS_USERNAME'],
   :password => ENV['WORDPRESS_PASSWORD'],
+  :path => ENV['WORDPRESS_PATH'],
   :use_ssl => false
 }
 
-CLIENT = Rubypress::Client.new( CLIENT_OPTS )
-
 HTTP_AUTH_CLIENT_OPTS = CLIENT_OPTS.merge(
-  :http_user => ENV['WORDPRESS_HTTP_USER'] || 'test',
-  :http_password => ENV['WORDPRESS_HTTP_PASSWORD'] || 'test' )
+  :http_user => ENV['WORDPRESS_HTTP_LOGIN'] || 'test',
+  :http_password => ENV['WORDPRESS_HTTP_PASS'] || 'test',
+  :host => ENV['WORDPRESS_HTTP_HOST'],
+  :username => ENV['WORDPRESS_HTTP_USERNAME'],
+  :password => ENV['WORDPRESS_HTTP_PASSWORD'],
+  :path=> ENV['WORDPRESS_HTTP_PATH']
+)
+
+
+CLIENT = Rubypress::Client.new( CLIENT_OPTS )
 
 HTTP_AUTH_CLIENT = Rubypress::Client.new( HTTP_AUTH_CLIENT_OPTS )
 

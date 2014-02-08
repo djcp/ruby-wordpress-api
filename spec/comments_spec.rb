@@ -1,18 +1,32 @@
+require_relative 'spec_helper'
+
 describe "#comments" do
 
-  let(:post_id){ 134 }
-  let(:comment_id){ 1 }
+  let(:post_id){ 1 }
   let(:comment){ {:comment_parent => "", :content => "This is a test thing here.", :author => "John Adams", :author_url => "http://johnadamsforpresidentnow.com", :author_email => "johnadams@whitehouse.gov"} }
   
+  it "#newComment" do
+    VCR.use_cassette("newComment") do
+      COMMENT_ID = CLIENT.newComment({:post_id => post_id, :comment => comment})
+      COMMENT_ID.class.should eq(Fixnum)
+    end
+  end
+
+  it "#editComment" do
+    VCR.use_cassette("editComment") do
+      CLIENT.editComment({:comment_id => COMMENT_ID, :comment => comment}).class.should eq(TrueClass)
+    end
+  end
+
   it "#getCommentCount" do
     VCR.use_cassette("getCommentCount") do
-      CLIENT.getCommentCount({:post_id => post_id}).should include("approved" => "1")
+      CLIENT.getCommentCount({:post_id => post_id}).should include("approved")
     end
   end
 
   it "#getComment" do
     VCR.use_cassette("getComment") do
-      CLIENT.getComment({:comment_id => comment_id}).should include("comment_id" => "1")
+      CLIENT.getComment({:comment_id => COMMENT_ID}).should include("content" => "This is a test thing here.")
     end
   end
 
@@ -22,21 +36,9 @@ describe "#comments" do
     end
   end
 
-  it "#newComment" do
-    VCR.use_cassette("newComment") do
-      CLIENT.newComment({:post_id => post_id, :comment => comment}).class.should eq(Fixnum)
-    end
-  end
-
-  it "#editComment" do
-    VCR.use_cassette("editComment") do
-      CLIENT.editComment({:comment_id => comment_id, :comment => comment}).class.should eq(TrueClass)
-    end
-  end
-
   it "#deleteComment" do
     VCR.use_cassette("deleteComment") do
-      CLIENT.deleteComment({:comment_id => comment_id}).class.should eq(TrueClass)
+      CLIENT.deleteComment({:comment_id => COMMENT_ID}).class.should eq(TrueClass)
     end
   end
 

@@ -6,14 +6,14 @@ http_interactions:
     body:
       encoding: UTF-8
       string: |
-        <?xml version="1.0" ?><methodCall><methodName>wp.setOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><struct><member><name>blog_tagline</name><value><string>This is a great tagline</string></value></member></struct></value></data></array></value></param></params></methodCall>
+        <?xml version="1.0" ?><methodCall><methodName>wp.uploadFile</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><struct><member><name>id</name><value><string></string></value></member><member><name>name</name><value><string>test_file.png</string></value></member><member><name>bits</name><value><base64></base64></value></member></struct></value></data></array></value></param></params></methodCall>
     headers:
       User-Agent:
       - XMLRPC::Client (Ruby 2.0.0)
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
-      - '392'
+      - '504'
       Connection:
       - keep-alive
       Accept-Encoding:
@@ -26,7 +26,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 08 Feb 2014 23:06:41 GMT
+      - Sat, 08 Feb 2014 23:06:38 GMT
       Server:
       - Apache/2.2.22
       X-Powered-By:
@@ -34,7 +34,7 @@ http_interactions:
       Connection:
       - close
       Content-Length:
-      - '504'
+      - '551'
       Vary:
       - User-Agent,Accept-Encoding
       Content-Type:
@@ -48,16 +48,15 @@ http_interactions:
             <param>
               <value>
               <struct>
-          <member><name>blog_tagline</name><value><struct>
-          <member><name>desc</name><value><string>Site Tagline</string></value></member>
-          <member><name>readonly</name><value><boolean>0</boolean></value></member>
-          <member><name>value</name><value><string>This is a great tagline</string></value></member>
-        </struct></value></member>
+          <member><name>id</name><value><string>39</string></value></member>
+          <member><name>file</name><value><string>test_file.png</string></value></member>
+          <member><name>url</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file17.png</string></value></member>
+          <member><name>type</name><value><string></string></value></member>
         </struct>
               </value>
             </param>
           </params>
         </methodResponse>
     http_version: 
-  recorded_at: Sat, 08 Feb 2014 23:06:42 GMT
+  recorded_at: Sat, 08 Feb 2014 23:06:38 GMT
 recorded_with: VCR 2.5.0

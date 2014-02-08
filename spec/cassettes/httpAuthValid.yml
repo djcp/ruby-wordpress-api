@@ -2,18 +2,18 @@
 http_interactions:
 - request:
     method: post
-    uri: http://WORDPRESS_HTTP_USER:WORDPRESS_HTTP_PASSWORD@WORDPRESS_HOST/xmlrpc.php
+    uri: http://<WORDPRESS_HTTP_LOGIN>:<WORDPRESS_HTTP_PASS>@<WORDPRESS_HOST><WORDPRESS_HTTP_PATH>
     body:
       encoding: UTF-8
       string: |
-        <?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+        <?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string><WORDPRESS_HTTP_PASSWORD></string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
     headers:
       User-Agent:
       - XMLRPC::Client (Ruby 2.0.0)
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
-      - '304'
+      - '300'
       Connection:
       - keep-alive
       Accept-Encoding:
@@ -26,17 +26,17 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 29 Jan 2014 13:24:23 GMT
+      - Sat, 08 Feb 2014 23:06:34 GMT
       Server:
-      - Apache/2.2.16 (Debian)
+      - Apache/2.2.22
       X-Powered-By:
-      - PHP/5.3.3-7+squeeze14
+      - PHP/5.3.27
       Connection:
       - close
       Content-Length:
-      - '8203'
+      - '8987'
       Vary:
-      - Accept-Encoding
+      - User-Agent,Accept-Encoding
       Content-Type:
       - text/xml; charset=UTF-8
     body:
@@ -56,17 +56,27 @@ http_interactions:
           <member><name>software_version</name><value><struct>
           <member><name>desc</name><value><string>Software Version</string></value></member>
           <member><name>readonly</name><value><boolean>1</boolean></value></member>
-          <member><name>value</name><value><string>3.5.1</string></value></member>
+          <member><name>value</name><value><string>3.7.1</string></value></member>
         </struct></value></member>
           <member><name>blog_url</name><value><struct>
-          <member><name>desc</name><value><string>Site URL</string></value></member>
+          <member><name>desc</name><value><string>WordPress Address (URL)</string></value></member>
           <member><name>readonly</name><value><boolean>1</boolean></value></member>
-          <member><name>value</name><value><string>http://WORDPRESS_HOST</string></value></member>
+          <member><name>value</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7</string></value></member>
         </struct></value></member>
           <member><name>home_url</name><value><struct>
-          <member><name>desc</name><value><string>Home URL</string></value></member>
+          <member><name>desc</name><value><string>Site Address (URL)</string></value></member>
           <member><name>readonly</name><value><boolean>1</boolean></value></member>
-          <member><name>value</name><value><string>http://WORDPRESS_HOST</string></value></member>
+          <member><name>value</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7</string></value></member>
+        </struct></value></member>
+          <member><name>login_url</name><value><struct>
+          <member><name>desc</name><value><string>Login Address (URL)</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7/wp-login.php</string></value></member>
+        </struct></value></member>
+          <member><name><WORDPRESS_USERNAME>_url</name><value><struct>
+          <member><name>desc</name><value><string>The URL to the <WORDPRESS_USERNAME> area</string></value></member>
+          <member><name>readonly</name><value><boolean>1</boolean></value></member>
+          <member><name>value</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7/wp-<WORDPRESS_USERNAME>/</string></value></member>
         </struct></value></member>
           <member><name>image_default_link_type</name><value><struct>
           <member><name>desc</name><value><string>Image default link type</string></value></member>
@@ -86,12 +96,12 @@ http_interactions:
           <member><name>template</name><value><struct>
           <member><name>desc</name><value><string>Template</string></value></member>
           <member><name>readonly</name><value><boolean>1</boolean></value></member>
-          <member><name>value</name><value><string>twentyeleven</string></value></member>
+          <member><name>value</name><value><string>twentythirteen</string></value></member>
         </struct></value></member>
           <member><name>stylesheet</name><value><struct>
           <member><name>desc</name><value><string>Stylesheet</string></value></member>
           <member><name>readonly</name><value><boolean>1</boolean></value></member>
-          <member><name>value</name><value><string>twentyeleven</string></value></member>
+          <member><name>value</name><value><string>twentythirteen</string></value></member>
         </struct></value></member>
           <member><name>post_thumbnail</name><value><struct>
           <member><name>desc</name><value><string>Post Thumbnail</string></value></member>
@@ -106,12 +116,12 @@ http_interactions:
           <member><name>blog_title</name><value><struct>
           <member><name>desc</name><value><string>Site Title</string></value></member>
           <member><name>readonly</name><value><boolean>0</boolean></value></member>
-          <member><name>value</name><value><string>Demo WP</string></value></member>
+          <member><name>value</name><value><string>Wordpress 3 Dot 7</string></value></member>
         </struct></value></member>
           <member><name>blog_tagline</name><value><struct>
           <member><name>desc</name><value><string>Site Tagline</string></value></member>
           <member><name>readonly</name><value><boolean>0</boolean></value></member>
-          <member><name>value</name><value><string>Just another WordPress site</string></value></member>
+          <member><name>value</name><value><string>This is a great tagline</string></value></member>
         </struct></value></member>
           <member><name>date_format</name><value><struct>
           <member><name>desc</name><value><string>Date Format</string></value></member>
@@ -126,7 +136,7 @@ http_interactions:
           <member><name>users_can_register</name><value><struct>
           <member><name>desc</name><value><string>Allow new users to sign up</string></value></member>
           <member><name>readonly</name><value><boolean>0</boolean></value></member>
-          <member><name>value</name><value><boolean>0</boolean></value></member>
+          <member><name>value</name><value><string>0</string></value></member>
         </struct></value></member>
           <member><name>thumbnail_size_w</name><value><struct>
           <member><name>desc</name><value><string>Thumbnail Width</string></value></member>
@@ -178,6 +188,6 @@ http_interactions:
             </param>
           </params>
         </methodResponse>
-    http_version:
-  recorded_at: Wed, 29 Jan 2014 13:24:23 GMT
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 23:06:36 GMT
 recorded_with: VCR 2.5.0

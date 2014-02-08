@@ -2,52 +2,64 @@
 http_interactions:
 - request:
     method: post
-    uri: http://WORDPRESS_HOST/xmlrpc.php
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
     body:
-      encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value><string>WORDPRESS_USERNAME</string></value></param><param><value><string>WORDPRESS_PASSWORD</string></value></param></params></methodCall>
-
-'
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getUsersBlogs</methodName><params><param><value><string><WORDPRESS_USERNAME></string></value></param><param><value><string>gxB06s8Z</string></value></param></params></methodCall>
     headers:
       User-Agent:
-      - XMLRPC::Client (Ruby 1.9.3)
+      - XMLRPC::Client (Ruby 2.0.0)
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
-      - '226'
+      - '213'
       Connection:
       - keep-alive
+      Accept-Encoding:
+      - identity
       Accept:
-      - ! '*/*'
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
       Date:
-      - Wed, 05 Jun 2013 15:43:12 GMT
+      - Wed, 12 Feb 2014 03:52:16 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
+      Content-Length:
+      - '707'
+      Vary:
+      - User-Agent,Accept-Encoding
       Content-Type:
       - text/xml; charset=UTF-8
-      Content-Length:
-      - '680'
-      Connection:
-      - keep-alive
-      Vary:
-      - Accept-Encoding
-      X-Hacker:
-      - If you're reading this, you should visit automattic.com/jobs and apply to
-        join the fun, mention this header.
     body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
-        \   <param>\n      <value>\n      <array><data>\n  <value><struct>\n  <member><name>isAdmin</name><value><boolean>1</boolean></value></member>\n
-        \ <member><name>url</name><value><string>http://WORDPRESS_HOST/</string></value></member>\n
-        \ <member><name>blogid</name><value><string>47989391</string></value></member>\n
-        \ <member><name>blogName</name><value><string>cthisisatest</string></value></member>\n
-        \ <member><name>xmlrpc</name><value><string>https://WORDPRESS_HOST/xmlrpc.php</string></value></member>\n</struct></value>\n</data></array>\n
-        \     </value>\n    </param>\n  </params>\n</methodResponse>\n"
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <array><data>
+          <value><struct>
+          <member><name>isAdmin</name><value><boolean>1</boolean></value></member>
+          <member><name>url</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/</string></value></member>
+          <member><name>blogid</name><value><string>1</string></value></member>
+          <member><name>blogName</name><value><string>Wordpress 3 Dot 7 No Auth</string></value></member>
+          <member><name>xmlrpc</name><value><string>http://<WORDPRESS_HOST><WORDPRESS_PATH></string></value></member>
+        </struct></value>
+        </data></array>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
     http_version: 
-  recorded_at: Wed, 05 Jun 2013 15:43:12 GMT
+  recorded_at: Wed, 12 Feb 2014 03:52:17 GMT
 recorded_with: VCR 2.5.0

@@ -2,18 +2,18 @@
 http_interactions:
 - request:
     method: post
-    uri: http://WORDPRESS_HTTP_USER:WORDPRESS_HTTP_PASSWORD@WORDPRESS_HOST/xmlrpc.php
+    uri: http://<WORDPRESS_HTTP_LOGIN>:wrongpass@<WORDPRESS_HOST><WORDPRESS_HTTP_PATH>
     body:
       encoding: UTF-8
       string: |
-        <?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+        <?xml version="1.0" ?><methodCall><methodName>wp.getOptions</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string><WORDPRESS_HTTP_PASSWORD></string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
     headers:
       User-Agent:
       - XMLRPC::Client (Ruby 2.0.0)
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
-      - '304'
+      - '300'
       Connection:
       - keep-alive
       Accept-Encoding:
@@ -26,17 +26,17 @@ http_interactions:
       message: Authorization Required
     headers:
       Date:
-      - Wed, 29 Jan 2014 13:10:25 GMT
+      - Sat, 08 Feb 2014 23:06:36 GMT
       Server:
-      - Apache/2.2.16 (Debian)
+      - Apache/2.2.22
       Www-Authenticate:
-      - Basic realm="Demo WP"
+      - Basic realm="protected area"
       Vary:
       - Accept-Encoding
       Content-Length:
-      - '484'
+      - '474'
       Keep-Alive:
-      - timeout=1, max=50
+      - timeout=5, max=100
       Connection:
       - Keep-Alive
       Content-Type:
@@ -56,8 +56,8 @@ http_interactions:
         browser doesn't understand how to supply
         the credentials required.</p>
         <hr>
-        <address>Apache/2.2.16 (Debian) Server at WORDPRESS_HOST Port 80</address>
+        <address>Apache/2.2.22 Server at <WORDPRESS_HOST> Port 80</address>
         </body></html>
-    http_version:
-  recorded_at: Wed, 29 Jan 2014 13:10:24 GMT
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 23:06:36 GMT
 recorded_with: VCR 2.5.0

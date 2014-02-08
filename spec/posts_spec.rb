@@ -1,12 +1,19 @@
+require_relative 'spec_helper'
+
 describe "#post" do
 
-  let(:post_id){ 134 }
   let(:post){ {:post_type => "post", :post_status => "draft", :post_title => "5 Ways to Know You're Cool", :post_content => "I don't always write tests, but when I do, I use RSpec."} }
-  let(:post_id_to_delete){ 137 }
+
+  it "#newPost" do
+    VCR.use_cassette("newPost") do
+      POST_ID = CLIENT.newPost({:content => post})
+      POST_ID.should =~ STRING_NUMBER_REGEX
+    end
+  end
 
   it "#getPost" do
     VCR.use_cassette("getPost") do
-      CLIENT.getPost({:post_id => post_id}).should include("post_id" => "134")
+      CLIENT.getPost({:post_id => POST_ID}).should include("post_id" => POST_ID)
     end
   end
 
@@ -16,21 +23,15 @@ describe "#post" do
     end
   end
 
-  it "#newPost" do
-    VCR.use_cassette("newPost") do
-      CLIENT.newPost({:content => post}).should =~ STRING_NUMBER_REGEX
-    end
-  end
-
   it "#editPost" do
     VCR.use_cassette("editPost") do
-      CLIENT.editPost({:post_id => post_id, :content => post}).should eq(true)
+      CLIENT.editPost({:post_id => POST_ID, :content => post}).should eq(true)
     end
   end
 
   it "#deletePost" do
     VCR.use_cassette("deletePost") do
-      CLIENT.deletePost({:post_id => post_id_to_delete}).should eq(true)
+      CLIENT.deletePost({:post_id => POST_ID}).should eq(true)
     end
   end
 

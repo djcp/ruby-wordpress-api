@@ -71,7 +71,7 @@ Pull requests welcome.
 
 ### Environment Variables
 
-The test suite requires that the following environment variables
+The test suite requires that the following environment variables are set:
 
 * WORDPRESS_HOST
 * WORDPRESS_USERNAME
@@ -85,19 +85,30 @@ WORDPRESS_USERNAME=yourwordpressuser@wordpress.com
 WORDPRESS_PASSWORD=yourwordpresspassword
 ```
 
-When RSpec runs it will set the environment variables for you.
+or use the sample-dot-env file as a base. .env will not be committed. When RSpec runs it will set the environment variables for you.
+
+If you'd like to run the tests to test a server with plain HTTP authentication, use these environment vars:
+
+```
+WORDPRESS_HTTP_LOGIN=yourhttplogin
+WORDPRESS_HTTP_PASS=yourhttppass
+WORDPRESS_HTTP_USERNAME=yourwordpressusername
+WORDPRESS_HTTP_PASSWORD=yourwordpresspassword
+WORDPRESS_HTTP_HOST=yourhost.com
+WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
+```
 
 ## Credits
 
-* Zach Feldman [@zachfeldman](http://zfeldman.com)
-* Dan Collis-Puro [@djcp](https://github.com/djcp)
+* Zach Feldman [@zachfeldman](http://zfeldman.com) - current maintainer, majority of codebase
+* Dan Collis-Puro [@djcp](https://github.com/djcp) - original project creator
 
 ## Contributors
 
 * Abdelkader Boudih [@seuros](https://github.com/seuros) (Removed deep_merge monkeypatch if ActiveSupport is defined, small refactors)
 * Alex Dantas [@alexdantas](https://github.com/alexdantas) (README edits re: host option)
 * Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
-* David Muto [@pseudomoto](https://github.com/pseudomoto) (Added ability to use a .env file.)
+* David Muto [@pseudomuto](https://github.com/pseudomuto) (Added ability to use a .env file.)
 
 ## License
 

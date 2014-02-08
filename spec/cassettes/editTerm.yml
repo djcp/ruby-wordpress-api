@@ -2,46 +2,56 @@
 http_interactions:
 - request:
     method: post
-    uri: http://WORDPRESS_HOST/xmlrpc.php
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
     body:
-      encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><methodCall><methodName>wp.editTerm</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string>WORDPRESS_USERNAME</string></value><value><string>WORDPRESS_PASSWORD</string></value><value><i4>576440</i4></value><value><struct><member><name>name</name><value><string>gazelles</string></value></member><member><name>taxonomy</name><value><string>category</string></value></member></struct></value></data></array></value></param></params></methodCall>
-
-'
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.editTerm</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><string>12</string></value><value><struct><member><name>name</name><value><string>gazelles</string></value></member><member><name>taxonomy</name><value><string>category</string></value></member></struct></value></data></array></value></param></params></methodCall>
     headers:
       User-Agent:
-      - XMLRPC::Client (Ruby 1.9.3)
+      - XMLRPC::Client (Ruby 2.0.0)
       Content-Type:
       - text/xml; charset=utf-8
       Content-Length:
-      - '488'
+      - '479'
       Connection:
       - keep-alive
+      Accept-Encoding:
+      - identity
       Accept:
-      - ! '*/*'
+      - '*/*'
   response:
     status:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
       Date:
-      - Wed, 05 Jun 2013 15:40:09 GMT
-      Content-Type:
-      - text/xml; charset=UTF-8
+      - Sat, 08 Feb 2014 23:06:59 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
       Content-Length:
       - '178'
-      Connection:
-      - keep-alive
-      X-Hacker:
-      - If you're reading this, you should visit automattic.com/jobs and apply to
-        join the fun, mention this header.
+      Vary:
+      - User-Agent,Accept-Encoding
+      Content-Type:
+      - text/xml; charset=UTF-8
     body:
-      encoding: US-ASCII
-      string: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<methodResponse>\n  <params>\n
-        \   <param>\n      <value>\n      <boolean>1</boolean>\n      </value>\n    </param>\n
-        \ </params>\n</methodResponse>\n"
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <boolean>1</boolean>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
     http_version: 
-  recorded_at: Wed, 05 Jun 2013 15:40:09 GMT
+  recorded_at: Sat, 08 Feb 2014 23:07:00 GMT
 recorded_with: VCR 2.5.0

@@ -3,7 +3,8 @@ describe "#users" do
   let(:edited_profile_content){ {:first_name => "Johnson"} }
 
   it "#getUsersBlogs" do
-    VCR.use_cassette("getUsersBlogs") do
+    #:update_content_length_header => true, :preserve_exact_body_bytes => true, :serialize_with => :json
+    VCR.use_cassette("getUsersBlogs", :tag => :getUsersBlogs) do
       CLIENT.getUsersBlogs[0].should include("blogid")
     end
   end 
