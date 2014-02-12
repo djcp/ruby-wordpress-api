@@ -109,6 +109,7 @@ WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
 * Alex Dantas [@alexdantas](https://github.com/alexdantas) (README edits re: host option)
 * Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
 * David Muto [@pseudomuto](https://github.com/pseudomuto) (Added ability to use a .env file.)
+* Teemu Pääkkönen [@borc](https://github.com/borc) (Added HTTP authentication and tests for it)
 
 ## License
 
