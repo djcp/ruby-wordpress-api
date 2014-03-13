@@ -1,18 +1,22 @@
 require 'yaml'
 require 'erb'
+require 'retryable'
+
 require_relative 'posts'
 require_relative 'taxonomies'
 require_relative 'media'
 require_relative 'comments'
 require_relative 'options'
 require_relative 'users'
+require_relative 'xml_rpc_retryable'
 
 module Rubypress
 
   class Client
 
     attr_reader :connection
-    attr_accessor :port, :host, :path, :username, :password, :use_ssl, :default_post_fields, :debug, :http_user, :http_password
+    attr_accessor :port, :host, :path, :username, :password, :use_ssl, :default_post_fields
+    attr_accessor :debug, :http_user, :http_password, :retry_timeouts
 
     def initialize(options = {})
       {
@@ -25,7 +29,8 @@ module Rubypress
         :default_post_fields => %w(post terms custom_fields),
         :debug => false,
         :http_user => nil,
-        :http_password => nil
+        :http_password => nil,
+        :retry_timeouts => false
       }.merge(options).each{ |opt| self.send("#{opt[0]}=", opt[1]) }
       self
     end
@@ -33,6 +38,8 @@ module Rubypress
     def connection
        server = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
        server.http_header_extra = {'accept-encoding' => 'identity'}
+       server.extend(XMLRPCRetryable) if retry_timeouts
+
        @connection = server
     end
 
@@ -63,7 +70,6 @@ module Rubypress
     include Comments
     include Options
     include Users
-
 
   end
 
