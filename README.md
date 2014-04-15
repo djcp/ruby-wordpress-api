@@ -112,7 +112,7 @@ WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
 * Abdelkader Boudih [@seuros](https://github.com/seuros) (Removed deep_merge monkeypatch if ActiveSupport is defined, small refactors)
 * Alex Dantas [@alexdantas](https://github.com/alexdantas) (README edits re: host option)
 * Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
-* David Muto [@pseudomuto](https://github.com/pseudomuto) (Added ability to use a .env file.)
+* David Muto [@pseudomuto](https://github.com/pseudomuto) (Added ability to use a .env file and to retry failed requests)
 * Teemu Pääkkönen [@borc](https://github.com/borc) (Added HTTP authentication and tests for it)
 
 ## License
