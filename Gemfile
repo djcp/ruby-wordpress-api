@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem "retryable-rb", require: false
+
 group :development do
   gem "rspec"
   gem "rdoc"

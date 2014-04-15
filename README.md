@@ -45,6 +45,10 @@ WARNING: SSL is NOT enabled by default for ease of testing for those running OS 
 
     (returns a post ID if post was successful)
 
+4. Automatically retry timeouts
+
+    When creating the client, you can optionally pass `:retry_timeouts => true` to rescue Timeout::Error and Net::ReadTimeout errors and retry the call.
+
 To make further requests, check out the documentation - this gem should follow the exact format of the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API). For even further clarification on what requests are available, take a look in the spec folder.
 
 NOTE: If your `xmlrpc.php` is not on the host root directory, you need to 
