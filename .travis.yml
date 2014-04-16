@@ -1,6 +1,7 @@
 language: ruby
 rvm:
-- ruby-2.0.0-p353
+  - 2.0.0
+  - 2.1.1
 git:
     depth: 1
 env:
