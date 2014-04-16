@@ -4,6 +4,7 @@ rvm:
   - 2.1.1
 git:
     depth: 1
+cache: bundler
 env:
   global:
     - secure: "Foe5JrG+j5kd3Sy1TY0ovB2yPnncqKlYdPsDfjV95cCy/2iImh1vvKxsdkBrK7/WjcADO7DjF96hItoH53hzmou4+Fz3/Z25h84gClavnqQmpTUWWmyZou+S47uu8st3bujtrKMBwVCkO+eG1mcfhG3V++08dUFjrLnWMmgkTRM="
