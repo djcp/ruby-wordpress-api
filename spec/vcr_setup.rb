@@ -18,7 +18,7 @@ VCR.configure do |c|
   c.hook_into :webmock
   sensitive_data.each do |data|
     c.filter_sensitive_data("<#{data}>") do 
-      CGI::escape(ENV[data])
+      CGI::escape(ENV[data]) if ENV[data]
     end
     c.filter_sensitive_data("<#{data}>") do
       ENV[data]
