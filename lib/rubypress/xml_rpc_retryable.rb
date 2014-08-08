@@ -2,10 +2,11 @@ module Rubypress
   module XMLRPCRetryable
     include Retryable
 
-    RETRY_EXCEPTIONS = [
-      Timeout::Error,
-      Net::ReadTimeout
+    RUBY_EXCEPTIONS = [
+      Timeout::Error
     ]
+
+    RUBY_EXCEPTIONS << Net::ReadTimeout if Net.const_defined?(:ReadTimeout)
 
     def self.extended(instance)
       instance.singleton_class.send(:alias_method, :call_without_retry, :call)
@@ -13,7 +14,7 @@ module Rubypress
     end
 
     def call_with_retry(method, *args)
-      retryable on: RETRY_EXCEPTIONS do
+      retryable on: RUBY_EXCEPTIONS do
         call_without_retry(method, *args)
       end
     end

@@ -40,8 +40,8 @@ describe "#client" do
     expect( conn.user ).to eq HTTP_AUTH_CLIENT_OPTS[ :http_user ]
     expect( conn.password ).to eq HTTP_AUTH_CLIENT_OPTS[ :http_password ]
 
-    expect( conn.user.nil? ).to be_false
-    expect( conn.password.nil? ).to be_false
+    expect( conn.user.nil? ).to be false
+    expect( conn.password.nil? ).to be false
 
   end
 end
