@@ -114,7 +114,7 @@ WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
 * Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
 * David Muto [@pseudomuto](https://github.com/pseudomuto) (Added ability to use a .env file and to retry failed requests)
 * Teemu Pääkkönen [@borc](https://github.com/borc) (Added HTTP authentication and tests for it)
-
+* Brian Fletcher [@punkie](https://github.com/punkle) (Did work to try to get to 1.9.2 compat with tests, VCR issues prevented this. Now only officially support 1.9.3 and up)
 ## License
 
 Licensed under the same terms as WordPress itself - GPLv2.
