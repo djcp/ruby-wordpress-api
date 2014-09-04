@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.description = 'Easily access WordPress installations through the WordPress XML-RPC API. This gem exactly mirrors the functionality provided by the WordPress XML-RPC API in Ruby.'
   s.license = 'GPLv2'
 
-  s.required_ruby_version = '>= 1.9.2'
+  s.required_ruby_version = '>= 1.9.3'
 
   s.files = 'lib/rubypress.rb'
   s.files += Dir['lib/rubypress/**']
