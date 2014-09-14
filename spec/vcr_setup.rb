@@ -17,7 +17,7 @@ VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
   c.hook_into :webmock
   sensitive_data.each do |data|
-    c.filter_sensitive_data("<#{data}>") do 
+    c.filter_sensitive_data("<cgi_escaped_#{data}>") do
       CGI::escape(ENV[data]) if ENV[data]
     end
     c.filter_sensitive_data("<#{data}>") do
