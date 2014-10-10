@@ -3,3 +3,4 @@
 .env
 Gemfile.lock
 *.gem
+.DS_Store
