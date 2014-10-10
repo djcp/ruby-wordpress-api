@@ -15,12 +15,13 @@ module Rubypress
   class Client
 
     attr_reader :connection
-    attr_accessor :port, :host, :path, :username, :password, :use_ssl, :default_post_fields,
+    attr_accessor :port, :ssl_port, :host, :path, :username, :password, :use_ssl, :default_post_fields,
                   :debug, :http_user, :http_password, :retry_timeouts
 
     def initialize(options = {})
       {
         :port => 80,
+        :ssl_port => 443,
         :use_ssl => false,
         :host => nil,
         :path => '/xmlrpc.php',
@@ -36,7 +37,7 @@ module Rubypress
     end
 
     def connection
-       server = XMLRPC::Client.new(self.host, self.path, self.port,nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
+       server = XMLRPC::Client.new(self.host, self.path, (self.use_ssl ? self.ssl_port : self.port),nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
        server.http_header_extra = {'accept-encoding' => 'identity'}
        server.extend(XMLRPCRetryable) if retry_timeouts
 
