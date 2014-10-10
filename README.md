@@ -61,6 +61,25 @@ wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
                            :password => "yourwordpresspassword")
 ```
 
+5. Using SSL  
+Use the default SSL port of 443  
+	
+```ruby
+wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
+                           :username => "yourwordpressuser@wordpress.com",
+                           :password => "yourwordpresspassword",
+						   :use_ssl => true)
+```
+
+Use a non-default ssl port of your choosing (must be setup on your server correctly)  
+```ruby
+wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
+                           :username => "yourwordpressuser@wordpress.com",
+                           :password => "yourwordpresspassword",
+						   :use_ssl => true,
+						   :ssl_port => 995)
+```
+
 ## Contributing to rubypress
 
 Pull requests welcome.
