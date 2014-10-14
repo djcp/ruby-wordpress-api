@@ -9,76 +9,105 @@ This implements the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_W
 WARNING: SSL is NOT enabled by default for ease of testing for those running OS X systems without setup SSL certs. If this is important to you, checkout the options for instantiating a new client where you can set :use_ssl to true.
 
 
-## Getting Started
+# Getting Started
 
-1. Install the gem
+## Installing rubypress
 
-    A. To your system
+### System installation
     
-    `gem install rubypress`
+    gem install rubypress
 
-    B. Or using Bundler
+### Using Bundler
+    
+    # Add this to your Gemfile
+    gem 'rubypress'
 
-    Inside your Gemfile:
+## Using rubypress
 
-    `gem 'rubypress'`
+### In a script
 
-2. Create a new client
+    require 'rubypress'
 
-   ```ruby
-   > wp = Rubypress::Client.new(:host => "yourwordpresssite.com", :username => "yourwordpressuser@wordpress.com", :password => "yourwordpresspassword")
-   ```
+## Usage Examples
 
-3. Make requests based off of the [WordPress XML RPC API Documentation](http://codex.wordpress.org/XML-RPC_WordPress_API)
+### Create a new client
 
-    ```ruby
-    > wp.getOptions
+    wp = Rubypress::Client.new(:host => "yourwordpresssite.com", 
+                               :username => "yourwordpressuser@wordpress.com", 
+                               :password => "yourwordpresspassword")
+### Automatically retry timeouts
 
-    => {"software_name"=>{"desc"=>"Software Name", "readonly"=>true, "value"=>"WordPress"}
-    ```
-    (just a small excerpt of actual options for the sake of the whole [brevity thing](http://3-akamai.tapcdn.com/images/thumbs/taps/2012/06/demotivational-poster-the-dude-or-the-dude-his-dudeness-el-duderino-if-you-re-not-into-the-whole-brevity-thing-3410281f-sz640x523-animate.jpg))
+When creating the client, you can optionally pass `:retry_timeouts => true` to rescue Timeout::Error and Net::ReadTimeout errors and retry the call.
 
-    ```ruby
-    > wp.newPost(:blog_id => "your_blog_id", :content => { :post_status => "publish", :post_date => Time.now, :post_content => "What an awesome post", :post_title => "Woo Title" })  
-    => "24"  
-    ```
-
-    (returns a post ID if post was successful)
-
-4. Automatically retry timeouts
-
-    When creating the client, you can optionally pass `:retry_timeouts => true` to rescue Timeout::Error and Net::ReadTimeout errors and retry the call.
-
-To make further requests, check out the documentation - this gem should follow the exact format of the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API). For even further clarification on what requests are available, take a look in the spec folder.
+    wp = Rubypress::Client.new(:host => "yourwordpresssite.com", 
+                               :username => "yourwordpressuser@wordpress.com", 
+                               :password => "yourwordpresspassword",
+                               :retry_timeouts => true)
+### Non-standard `xmlrpc.php` location
 
 NOTE: If your `xmlrpc.php` is not on the host root directory, you need to 
 specify it's path. For example, to connect to `myhostedwordpresssite.net/path/to/blog`:
 
-```ruby
-wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
-                           :path => "/path/to/blog/xmlrpc.php",
-                           :username => "yourwordpressuser@wordpress.com",
-                           :password => "yourwordpresspassword")
-```
 
-5. Using SSL  
+    wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
+                               :username => "yourwordpressuser@wordpress.com",
+                               :password => "yourwordpresspassword",
+                               :path => "/path/to/blog/xmlrpc.php")
+
+
+                       
+## Making requests 
+(Based off of the [WordPress XML RPC API Documentation](http://codex.wordpress.org/XML-RPC_WordPress_API))
+
+### Getting Options
+    
+    wp.getOptions
+    
+    # Returns a hash of options from the wp_options table
+    => {"software_name"=>{"desc"=>"Software Name", 
+                          "readonly"=>true, 
+                          "value"=>"WordPress"}}
+
+(just a small excerpt of actual options for the sake of the whole [brevity thing](http://3-akamai.tapcdn.com/images/thumbs/taps/2012/06/demotivational-poster-the-dude-or-the-dude-his-dudeness-el-duderino-if-you-re-not-into-the-whole-brevity-thing-3410281f-sz640x523-animate.jpg))
+
+### Creating a new post
+
+    wp.newPost( :blog_id => "your_blog_id", # 0 unless using WP Multi-Site, then use the blog id
+                :content => {
+                             :post_status  => "publish",
+                             :post_date    => Time.now,
+                             :post_content => "This is the body",
+                             :post_title   => "RubyPress is the best!",
+                             :post_name    => "/rubypress-is-the-best",
+                             :post_author  => 1, # 1 if there is only the admin user, otherwise the user's id
+                             :terms_names  => {
+                                :category   => ['Category One','Category Two','Category Three'],
+                                :post_tag => ['Tag One','Tag Two', 'Tag Three']
+                                              }
+                             }
+                )  
+    
+    # Returns the newly created posts ID if successful
+    => "24"  
+
+### Using SSL to connect
 Use the default SSL port of 443  
 	
-```ruby
-wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
-                           :username => "yourwordpressuser@wordpress.com",
-                           :password => "yourwordpresspassword",
-						   :use_ssl => true)
-```
+    wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
+                               :username => "yourwordpressuser@wordpress.com",
+                               :password => "yourwordpresspassword",
+                               :use_ssl => true)
+
 
 Use a non-default ssl port of your choosing (must be setup on your server correctly)  
-```ruby
-wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
-                           :username => "yourwordpressuser@wordpress.com",
-                           :password => "yourwordpresspassword",
-						   :use_ssl => true,
-						   :ssl_port => 995)
-```
+
+    wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
+                               :username => "yourwordpressuser@wordpress.com",
+                               :password => "yourwordpresspassword",
+                               :use_ssl => true,
+                               :ssl_port => 995)
+
+To make further requests, check out the documentation - this gem should follow the exact format of the [WordPress XML RPC API](http://codex.wordpress.org/XML-RPC_WordPress_API). For even further clarification on what requests are available, take a look in the spec folder.
 
 ## Contributing to rubypress
 
@@ -92,6 +121,8 @@ Pull requests welcome.
 * Make sure to add tests for it. This is important so we don't break it in a future version unintentionally.
 * Submit a pull request
 
+## Testing
+
 ### Environment Variables
 
 The test suite requires that the following environment variables are set:
@@ -102,24 +133,24 @@ The test suite requires that the following environment variables are set:
 
 Optionally, you can create a file in the working directory called _.env_ and add the following to it:
 
-```
-WORDPRESS_HOST=myhostedwordpresssite.net
-WORDPRESS_USERNAME=yourwordpressuser@wordpress.com
-WORDPRESS_PASSWORD=yourwordpresspassword
-```
+
+    WORDPRESS_HOST=myhostedwordpresssite.net
+    WORDPRESS_USERNAME=yourwordpressuser@wordpress.com
+    WORDPRESS_PASSWORD=yourwordpresspassword
+
 
 or use the sample-dot-env file as a base. .env will not be committed. When RSpec runs it will set the environment variables for you.
 
 If you'd like to run the tests to test a server with plain HTTP authentication, use these environment vars:
 
-```
-WORDPRESS_HTTP_LOGIN=yourhttplogin
-WORDPRESS_HTTP_PASS=yourhttppass
-WORDPRESS_HTTP_USERNAME=yourwordpressusername
-WORDPRESS_HTTP_PASSWORD=yourwordpresspassword
-WORDPRESS_HTTP_HOST=yourhost.com
-WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
-```
+
+    WORDPRESS_HTTP_LOGIN=yourhttplogin
+    WORDPRESS_HTTP_PASS=yourhttppass
+    WORDPRESS_HTTP_USERNAME=yourwordpressusername
+    WORDPRESS_HTTP_PASSWORD=yourwordpresspassword
+    WORDPRESS_HTTP_HOST=yourhost.com
+    WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
+
 
 ## Credits
 
