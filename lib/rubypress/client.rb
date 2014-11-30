@@ -37,11 +37,13 @@ module Rubypress
     end
 
     def connection
-       server = XMLRPC::Client.new(self.host, self.path, (self.use_ssl ? self.ssl_port : self.port),nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
-       server.http_header_extra = {'accept-encoding' => 'identity'}
-       server.extend(XMLRPCRetryable) if retry_timeouts
-
-       @connection = server
+      if @connection.nil?
+        @connection = XMLRPC::Client.new(self.host, self.path, (self.use_ssl ? self.ssl_port : self.port),nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
+        @connection.http_header_extra = {'accept-encoding' => 'identity'}
+        @connection.extend(XMLRPCRetryable) if retry_timeouts
+      end
+     
+      @connection
     end
 
     def self.default
