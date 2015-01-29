@@ -16,7 +16,7 @@ module Rubypress
 
     attr_reader :connection
     attr_accessor :port, :ssl_port, :host, :path, :username, :password, :use_ssl, :default_post_fields,
-                  :debug, :http_user, :http_password, :retry_timeouts
+                  :debug, :http_user, :http_password, :retry_timeouts, :cookie
 
     def initialize(options = {})
       {
@@ -31,7 +31,8 @@ module Rubypress
         :debug => false,
         :http_user => nil,
         :http_password => nil,
-        :retry_timeouts => false
+        :retry_timeouts => false,
+        :cookie => nil
       }.merge(options).each{ |opt| self.send("#{opt[0]}=", opt[1]) }
       self
     end
@@ -41,6 +42,7 @@ module Rubypress
         @connection = XMLRPC::Client.new(self.host, self.path, (self.use_ssl ? self.ssl_port : self.port),nil,nil,self.http_user,self.http_password,self.use_ssl,nil)
         @connection.http_header_extra = {'accept-encoding' => 'identity'}
         @connection.extend(XMLRPCRetryable) if retry_timeouts
+        @connection.cookie = self.cookie unless self.cookie.nil?
       end
      
       @connection
