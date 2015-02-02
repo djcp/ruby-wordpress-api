@@ -185,6 +185,10 @@ variable names include `HTTP_` and can be set to the same or different values as
 * Teemu Pääkkönen [@borc](https://github.com/borc) (Added HTTP authentication and tests for it)
 * Brian Fletcher [@punkie](https://github.com/punkle) (Did work to try to get to 1.9.2 compat with tests, VCR issues prevented this. Now only officially support 1.9.3 and up)
 * Corey [@developercorey](https://github.com/developercorey) (Added ability to change SSL port, README updates)
+* Michael [@mibamur](https://github.com/mibamur) (Patched uploadFile method)
+* Rebecca Skinner [@sevenseacat](https://github.com/sevenseacat) (Cached the XMLRPC connection to save resources)
+* Casey Hadden [@caseyhadden](https://github.com/caseyhadden) (Added support for cookie-based authentication schemes)
+* Noah Botimer [@botimer](https://github.com/botimer) (Allowed custom prefies on method names and tests to run against https servers on any port)
 
 ## License
 
