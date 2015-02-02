@@ -11,6 +11,30 @@ describe "#client" do
     expect(CLIENT.execute("wp.getAuthors", {})).to eq( [{"user_id"=>"46917508", "user_login"=>"johnsmith", "display_name"=>"john"}, {"user_id"=>"33333367", "user_login"=>"johnsmith", "display_name"=>"johnsmith"}] )
   end
 
+  it "#execute adds wp prefix to bare method name" do
+    connection = CLIENT.connection
+    allow(connection).to receive(:call) do |method, args|
+      expect(method).to eq('wp.getAuthors')
+    end
+    CLIENT.execute("getAuthors", {})
+  end
+
+  it "#execute does not modify wp prefix on method name" do
+    connection = CLIENT.connection
+    allow(connection).to receive(:call) do |method, args|
+      expect(method).to eq('wp.getAuthors')
+    end
+    CLIENT.execute("wp.getAuthors", {})
+  end
+
+  it "#execute does not modify method with custom prefix" do
+    connection = CLIENT.connection
+    allow(connection).to receive(:call) do |method, args|
+      expect(method).to eq("wpx.getAuthors")
+    end
+    CLIENT.execute("wpx.getAuthors", {})
+  end
+
   it '#execute only sets up retries for the current instance' do
     retryable_connection = Rubypress::Client.new(CLIENT_OPTS.merge(retry_timeouts: true)).connection
     standard_connection = Rubypress::Client.new(CLIENT_OPTS).connection
