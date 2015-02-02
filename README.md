@@ -146,11 +146,15 @@ Optionally, you can create a file in the working directory called _.env_ and add
 
 
     WORDPRESS_HOST=myhostedwordpresssite.net
+    WORDPRESS_PORT=80
+    WORDPRESS_USE_SSL=false
     WORDPRESS_USERNAME=yourwordpressuser@wordpress.com
     WORDPRESS_PASSWORD=yourwordpresspassword
 
 
 or use the sample-dot-env file as a base. .env will not be committed. When RSpec runs it will set the environment variables for you.
+If you use a port other than 80, specify it with `WORDPRESS_PORT` and use `WORDPRESS_USE_SSL=true` for HTTPS servers. Be sure to set
+the port to 443 for standard HTTPS servers.
 
 If you'd like to run the tests to test a server with plain HTTP authentication, use these environment vars:
 
@@ -160,8 +164,12 @@ If you'd like to run the tests to test a server with plain HTTP authentication, 
     WORDPRESS_HTTP_USERNAME=yourwordpressusername
     WORDPRESS_HTTP_PASSWORD=yourwordpresspassword
     WORDPRESS_HTTP_HOST=yourhost.com
+    WORDPRESS_HTTP_PORT=80
+    WORDPRESS_HTTP_USE_SSL=false
     WORDPRESS_HTTP_PATH=/path/to/xmlrpc.php
 
+The Basic Authentication settings also allow a custom port and whether to use SSL/HTTPS. Note that, like the host and path, these
+variable names include `HTTP_` and can be set to the same or different values as needed.
 
 ## Credits
 

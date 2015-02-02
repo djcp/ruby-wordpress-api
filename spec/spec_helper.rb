@@ -22,21 +22,23 @@ RSpec.configure do |config|
 end
 
 CLIENT_OPTS = {
-  :port => 80,
+  :port => ENV['WORDPRESS_PORT'] || 80,
   :host => ENV['WORDPRESS_HOST'],
   :username => ENV['WORDPRESS_USERNAME'],
   :password => ENV['WORDPRESS_PASSWORD'],
   :path => ENV['WORDPRESS_PATH'],
-  :use_ssl => false
+  :use_ssl => ENV['WORDPRESS_USE_SSL'] == 'true'
 }
 
 HTTP_AUTH_CLIENT_OPTS = CLIENT_OPTS.merge(
   :http_user => ENV['WORDPRESS_HTTP_LOGIN'] || 'test',
   :http_password => ENV['WORDPRESS_HTTP_PASS'] || 'test',
   :host => ENV['WORDPRESS_HTTP_HOST'],
+  :port => ENV['WORDPRESS_HTTP_PORT'] || 80,
   :username => ENV['WORDPRESS_HTTP_USERNAME'],
   :password => ENV['WORDPRESS_HTTP_PASSWORD'],
-  :path=> ENV['WORDPRESS_HTTP_PATH']
+  :path=> ENV['WORDPRESS_HTTP_PATH'],
+  :use_ssl => ENV['WORDPRESS_HTTP_USE_SSL'] == 'true'
 )
 
 
