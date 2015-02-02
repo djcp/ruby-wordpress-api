@@ -58,12 +58,13 @@ module Rubypress
         :password => self.password
       }
       options_final.deep_merge!(options).each{|option| args.push(option[1]) if !option[1].nil?}
+      method = "wp.#{method}" unless method.include?('.')
       if self.debug
         connection.set_debug
-        server = self.connection.call("wp.#{method}", args)
+        server = self.connection.call(method, args)
         pp server
       else
-        self.connection.call("wp.#{method}", args)
+        self.connection.call(method, args)
       end
     end
 
