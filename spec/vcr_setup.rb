@@ -25,7 +25,7 @@ VCR.configure do |c|
     end
   end
   c.default_cassette_options = { match_requests_on: [:method] }
-  c.before_playback(:getUsersBlogs){|interaction|
-    interaction.response.headers['Content-Length'] = 711
+  c.before_playback(){|interaction|
+    interaction.response.update_content_length_header
   }
 end

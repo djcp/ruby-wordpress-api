@@ -58,6 +58,18 @@ describe "#client" do
     expect { client.execute('newComment', {}) }.to raise_error(VCR::Errors::UnhandledHTTPRequestError)
   end
 
+  it "#connection does not include cookies by default" do
+    client = Rubypress::Client.new(CLIENT_OPTS)
+    connection = client.connection
+    expect(connection.cookie).to eq nil
+  end
+
+  it "#connection includes cookies when set" do
+    client = Rubypress::Client.new(CLIENT_OPTS.merge(cookie: "foo=bar"))
+    connection = client.connection
+    expect(connection.cookie).to include("foo=bar")
+  end
+
   it "#httpAuth" do
     conn = HTTP_AUTH_CLIENT.connection
 
