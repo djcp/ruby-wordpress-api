@@ -188,7 +188,8 @@ variable names include `HTTP_` and can be set to the same or different values as
 * Michael [@mibamur](https://github.com/mibamur) (Patched uploadFile method)
 * Rebecca Skinner [@sevenseacat](https://github.com/sevenseacat) (Cached the XMLRPC connection to save resources)
 * Casey Hadden [@caseyhadden](https://github.com/caseyhadden) (Added support for cookie-based authentication schemes)
-* Noah Botimer [@botimer](https://github.com/botimer) (Allowed custom prefies on method names and tests to run against https servers on any port)
+* Noah Botimer [@botimer](https://github.com/botimer) (Allowed custom prefixes on method names and tests to run against https servers on any port)
+* Carlos Pérez Cerrato [@lastko](https://github.com/lastko) (Caught Errno::EPIPE: Broken pipe errors)
 
 ## License
 
