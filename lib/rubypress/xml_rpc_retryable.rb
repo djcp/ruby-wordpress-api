@@ -3,7 +3,8 @@ module Rubypress
     include Retryable
 
     RUBY_EXCEPTIONS = [
-      Timeout::Error
+      Timeout::Error,
+      Errno::EPIPE
     ]
 
     RUBY_EXCEPTIONS << Net::ReadTimeout if Net.const_defined?(:ReadTimeout)

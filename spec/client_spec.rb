@@ -52,6 +52,16 @@ describe "#client" do
     expect { client.execute('newComment', {}) }.to raise_error(Timeout::Error)
   end
 
+  it '#execute retries when catch broken pipe exception and retry_timeouts option is true' do
+    client = Rubypress::Client.new(CLIENT_OPTS.merge(retry_timeouts: true))
+    connection = client.connection
+    client.stub(:connection).and_return(connection)
+
+    expect(connection).to receive(:call_without_retry).twice.and_raise(Errno::EPIPE)
+    expect { client.execute('newComment', {}) }.to raise_error(Errno::EPIPE)
+  end
+
+
   it '#execute does not retry timeouts by default' do
     client = Rubypress::Client.new(CLIENT_OPTS)
     expect(client).to_not receive(:call_with_retry)
