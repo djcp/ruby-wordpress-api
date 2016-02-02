@@ -48,17 +48,11 @@ http_interactions:
             <param>
               <value>
               <struct>
-          <member><name>standard</name><value><string>Standard</string></value></member>
-          <member><name>aside</name><value><string>Aside</string></value></member>
-          <member><name>chat</name><value><string>Chat</string></value></member>
-          <member><name>gallery</name><value><string>Gallery</string></value></member>
-          <member><name>link</name><value><string>Link</string></value></member>
-          <member><name>image</name><value><string>Image</string></value></member>
-          <member><name>quote</name><value><string>Quote</string></value></member>
-          <member><name>status</name><value><string>Status</string></value></member>
-          <member><name>video</name><value><string>Video</string></value></member>
-          <member><name>audio</name><value><string>Audio</string></value></member>
-        </struct>
+          <member><name>draft</name><value><string>Draft</string></value></member>
+          <member><name>pending</name><value><string>Pending Review</string></value></member>
+          <member><name>private</name><value><string>Private</string></value></member>
+          <member><name>publish</name><value><string>Published</string></value></member>
+              </struct>
               </value>
             </param>
           </params>

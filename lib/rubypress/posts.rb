@@ -68,7 +68,7 @@ module Rubypress
     end
 
     def getPostStatusList(options = {})
-      execute('getPostFormats', options)
+      execute('getPostStatusList', options)
     end
 
   end
