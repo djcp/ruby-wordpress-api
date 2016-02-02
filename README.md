@@ -190,6 +190,7 @@ variable names include `HTTP_` and can be set to the same or different values as
 * Casey Hadden [@caseyhadden](https://github.com/caseyhadden) (Added support for cookie-based authentication schemes)
 * Noah Botimer [@botimer](https://github.com/botimer) (Allowed custom prefixes on method names and tests to run against https servers on any port)
 * Carlos Pérez Cerrato [@lastko](https://github.com/lastko) (Caught Errno::EPIPE: Broken pipe errors)
+* Eric Gascoine [@ericgascoine](https://github.com/ericgascoine) Fixed getPostStatusList
 
 ## License
 
