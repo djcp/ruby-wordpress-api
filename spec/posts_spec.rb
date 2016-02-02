@@ -55,7 +55,7 @@ describe "#post" do
 
   it "#getPostStatusList" do
     VCR.use_cassette("getPostStatusList") do
-      CLIENT.getPostStatusList.should include("standard"=>"Standard")
+      CLIENT.getPostStatusList.should include("draft"=>"Draft")
     end
   end
 
