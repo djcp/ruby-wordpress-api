@@ -90,4 +90,16 @@ describe "#client" do
     expect( conn.password.nil? ).to be false
 
   end
+
+  it "#connection defaults the timeout to 30s" do
+    client = Rubypress::Client.new(CLIENT_OPTS)
+    connection = client.connection
+    expect(connection.timeout).to eq 30
+  end
+
+  it "#connection timeout can be overridden" do
+    client = Rubypress::Client.new(CLIENT_OPTS.merge(timeout: 60))
+    connection = client.connection
+    expect(connection.timeout).to eq 60
+  end
 end
