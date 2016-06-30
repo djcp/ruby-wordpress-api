@@ -191,6 +191,7 @@ variable names include `HTTP_` and can be set to the same or different values as
 * Noah Botimer [@botimer](https://github.com/botimer) (Allowed custom prefixes on method names and tests to run against https servers on any port)
 * Carlos Pérez Cerrato [@lastko](https://github.com/lastko) (Caught Errno::EPIPE: Broken pipe errors)
 * Eric Gascoine [@ericgascoine](https://github.com/ericgascoine) Fixed getPostStatusList
+* Matt Colyer [@mcoyler](https://github.com/mcolyer) Added configurable timeouts.
 
 ## License
 
