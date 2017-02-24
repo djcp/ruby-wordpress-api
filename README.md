@@ -14,11 +14,11 @@ WARNING: SSL is NOT enabled by default for ease of testing for those running OS 
 ## Installing rubypress
 
 ### System installation
-    
+
     gem install rubypress
 
 ### Using Bundler
-    
+
     # Add this to your Gemfile
     gem 'rubypress'
 
@@ -32,20 +32,20 @@ WARNING: SSL is NOT enabled by default for ease of testing for those running OS 
 
 ### Create a new client
 
-    wp = Rubypress::Client.new(:host => "yourwordpresssite.com", 
-                               :username => "yourwordpressuser@wordpress.com", 
+    wp = Rubypress::Client.new(:host => "yourwordpresssite.com",
+                               :username => "yourwordpressuser@wordpress.com",
                                :password => "yourwordpresspassword")
 ### Automatically retry timeouts
 
 When creating the client, you can optionally pass `:retry_timeouts => true` to rescue Timeout::Error and Net::ReadTimeout errors and retry the call.
 
-    wp = Rubypress::Client.new(:host => "yourwordpresssite.com", 
-                               :username => "yourwordpressuser@wordpress.com", 
+    wp = Rubypress::Client.new(:host => "yourwordpresssite.com",
+                               :username => "yourwordpressuser@wordpress.com",
                                :password => "yourwordpresspassword",
                                :retry_timeouts => true)
 ### Non-standard `xmlrpc.php` location
 
-NOTE: If your `xmlrpc.php` is not on the host root directory, you need to 
+NOTE: If your `xmlrpc.php` is not on the host root directory, you need to
 specify it's path. For example, to connect to `myhostedwordpresssite.net/path/to/blog`:
 
 
@@ -55,17 +55,17 @@ specify it's path. For example, to connect to `myhostedwordpresssite.net/path/to
                                :path => "/path/to/blog/xmlrpc.php")
 
 
-                       
-## Making requests 
+
+## Making requests
 (Based off of the [WordPress XML RPC API Documentation](http://codex.wordpress.org/XML-RPC_WordPress_API))
 
 ### Getting Options
-    
+
     wp.getOptions
-    
+
     # Returns a hash of options from the wp_options table
-    => {"software_name"=>{"desc"=>"Software Name", 
-                          "readonly"=>true, 
+    => {"software_name"=>{"desc"=>"Software Name",
+                          "readonly"=>true,
                           "value"=>"WordPress"}}
 
 (just a small excerpt of actual options for the sake of the whole [brevity thing](http://3-akamai.tapcdn.com/images/thumbs/taps/2012/06/demotivational-poster-the-dude-or-the-dude-his-dudeness-el-duderino-if-you-re-not-into-the-whole-brevity-thing-3410281f-sz640x523-animate.jpg))
@@ -86,13 +86,13 @@ specify it's path. For example, to connect to `myhostedwordpresssite.net/path/to
                                               }
                              }
                 )  
-    
+
     # Returns the newly created posts ID if successful
     => "24"  
 
 ### Using SSL to connect
 Use the default SSL port of 443  
-	
+
     wp = Rubypress::Client.new(:host => "myhostedwordpresssite.net",
                                :username => "yourwordpressuser@wordpress.com",
                                :password => "yourwordpresspassword",
@@ -123,7 +123,7 @@ To make further requests, check out the documentation - this gem should follow t
 ## Contributing to rubypress
 
 Pull requests welcome.
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
@@ -180,7 +180,7 @@ variable names include `HTTP_` and can be set to the same or different values as
 
 * Abdelkader Boudih [@seuros](https://github.com/seuros) (Removed deep_merge monkeypatch if ActiveSupport is defined, small refactors, fixed dependency issue with retry)
 * Alex Dantas [@alexdantas](https://github.com/alexdantas) (README edits re: host option)
-* Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain.)
+* Pacop [@pacop](https://github.com/pacop) (Added a far easier way to upload files than the default method chain)
 * David Muto [@pseudomuto](https://github.com/pseudomuto) (Added ability to use a .env file and to retry failed requests)
 * Teemu Pääkkönen [@borc](https://github.com/borc) (Added HTTP authentication and tests for it)
 * Brian Fletcher [@punkie](https://github.com/punkle) (Did work to try to get to 1.9.2 compat with tests, VCR issues prevented this. Now only officially support 1.9.3 and up)
@@ -190,12 +190,13 @@ variable names include `HTTP_` and can be set to the same or different values as
 * Casey Hadden [@caseyhadden](https://github.com/caseyhadden) (Added support for cookie-based authentication schemes)
 * Noah Botimer [@botimer](https://github.com/botimer) (Allowed custom prefixes on method names and tests to run against https servers on any port)
 * Carlos Pérez Cerrato [@lastko](https://github.com/lastko) (Caught Errno::EPIPE: Broken pipe errors)
-* Eric Gascoine [@ericgascoine](https://github.com/ericgascoine) Fixed getPostStatusList
-* Matt Colyer [@mcoyler](https://github.com/mcolyer) Added configurable timeouts.
+* Eric Gascoine [@ericgascoine](https://github.com/ericgascoine) (Fixed getPostStatusList)
+* Matt Colyer [@mcoyler](https://github.com/mcolyer) (Added configurable timeouts)
+* Karim Naufal [@rimkashox](https://github.com/rimkashox) (Added support for Ruby >= 2.4.0)
 
 ## License
 
 Licensed under the same terms as WordPress itself - GPLv2.
 
-<!-- 
+<!--
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/ed093654d3f4ac89d05750e3def34190 "githalytics.com")](http://githalytics.com/zachfeldman/rubypress) -->

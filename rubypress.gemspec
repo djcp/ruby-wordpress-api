@@ -2,7 +2,7 @@ $LOAD_PATH.push File.expand_path('../lib', __FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'rubypress'
-  s.version = '1.2.1'
+  s.version = '1.2.2'
   s.platform = Gem::Platform::RUBY
   s.author = 'Zach Feldman'
   s.email = ['zachfeldman@gmail.com']
@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.files += Dir['lib/rubypress/**']
 
   s.add_dependency 'retryable-rb'
+  s.add_dependency 'xmlrpc'
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rdoc'
