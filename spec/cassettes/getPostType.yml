@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getPostType</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><string>post</string></value><value><array><data/></array></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '337'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - identity
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2014 23:06:47 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
+      Content-Length:
+      - '1547'
+      Vary:
+      - User-Agent,Accept-Encoding
+      Content-Type:
+      - text/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <struct>
+          <member><name>name</name><value><string>post</string></value></member>
+          <member><name>label</name><value><string>Posts</string></value></member>
+          <member><name>hierarchical</name><value><boolean>0</boolean></value></member>
+          <member><name>public</name><value><boolean>1</boolean></value></member>
+          <member><name>show_ui</name><value><boolean>1</boolean></value></member>
+          <member><name>_builtin</name><value><boolean>1</boolean></value></member>
+          <member><name>has_archive</name><value><boolean>0</boolean></value></member>
+          <member><name>supports</name><value><struct>
+          <member><name>title</name><value><boolean>1</boolean></value></member>
+          <member><name>editor</name><value><boolean>1</boolean></value></member>
+          <member><name>author</name><value><boolean>1</boolean></value></member>
+          <member><name>thumbnail</name><value><boolean>1</boolean></value></member>
+          <member><name>excerpt</name><value><boolean>1</boolean></value></member>
+          <member><name>trackbacks</name><value><boolean>1</boolean></value></member>
+          <member><name>custom-fields</name><value><boolean>1</boolean></value></member>
+          <member><name>comments</name><value><boolean>1</boolean></value></member>
+          <member><name>revisions</name><value><boolean>1</boolean></value></member>
+          <member><name>post-formats</name><value><boolean>1</boolean></value></member>
+        </struct></value></member>
+        </struct>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 23:06:48 GMT
+recorded_with: VCR 2.5.0

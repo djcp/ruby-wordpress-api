@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getUsers</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><struct/></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '285'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - identity
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2014 23:07:02 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
+      Content-Length:
+      - '1237'
+      Vary:
+      - User-Agent,Accept-Encoding
+      Content-Type:
+      - text/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <array><data>
+          <value><struct>
+          <member><name>user_id</name><value><string>1</string></value></member>
+          <member><name>username</name><value><string><WORDPRESS_USERNAME></string></value></member>
+          <member><name>first_name</name><value><string>Johnson</string></value></member>
+          <member><name>last_name</name><value><string></string></value></member>
+          <member><name>registered</name><value><dateTime.iso8601>20140202T16:53:06</dateTime.iso8601></value></member>
+          <member><name>bio</name><value><string></string></value></member>
+          <member><name>email</name><value><string>zachfeldman@gmail.com</string></value></member>
+          <member><name>nickname</name><value><string><WORDPRESS_USERNAME></string></value></member>
+          <member><name>nicename</name><value><string><WORDPRESS_USERNAME></string></value></member>
+          <member><name>url</name><value><string></string></value></member>
+          <member><name>display_name</name><value><string><WORDPRESS_USERNAME></string></value></member>
+          <member><name>roles</name><value><array><data>
+          <value><string><WORDPRESS_USERNAME>istrator</string></value>
+        </data></array></value></member>
+        </struct></value>
+        </data></array>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 23:07:02 GMT
+recorded_with: VCR 2.5.0

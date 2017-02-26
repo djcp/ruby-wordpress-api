@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.uploadFile</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><struct><member><name>id</name><value><string></string></value></member><member><name>name</name><value><string>test_file.png</string></value></member><member><name>bits</name><value><string>"\x89PNG\r\n\x1A\n\x00\x00\x00\rIHDR\x00\x00\x00\n\x00\x00\x00\n\b\x03\x00\x00\x00\xBA\xEC?\x8F\x00\x00\x00\x19tEXtSoftware\x00Adobe ImageReadyq\xC9e&lt;\x00\x00\x00\fPLTE\xAC\xAC\xAC\x87\x87\x87aaa\xFF\xFF\xFF\xF2\xB3\r\x90\x00\x00\x00\x04tRNS\xFF\xFF\xFF\x00@*\xA9\xF4\x00\x00\x004IDATx\xDAl\x8D1\x12\x00 \f\xC2\x02\xFE\xFF\xCF\x82\x0Eu0\x03\x97r\xD7\x96U\xDC\xE0\x98;\xE1@\xDB$ \xA7\xACJ\x1F\xD5h\xD0]{\x8E\xCD\x8B-\xC0\x00/\x88\x00\xDF$\xC9\x85\\x00\x00\x00\x00IEND\xAEB`\x82"</string></value></member></struct></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '984'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - identity
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2014 23:06:37 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
+      Content-Length:
+      - '551'
+      Vary:
+      - User-Agent,Accept-Encoding
+      Content-Type:
+      - text/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <struct>
+          <member><name>id</name><value><string>38</string></value></member>
+          <member><name>file</name><value><string>test_file.png</string></value></member>
+          <member><name>url</name><value><string>http://<WORDPRESS_HOST>/wordpress3dot7noauth/wp-content/uploads/2014/02/test_file16.png</string></value></member>
+          <member><name>type</name><value><string></string></value></member>
+        </struct>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 23:06:37 GMT
+recorded_with: VCR 2.5.0

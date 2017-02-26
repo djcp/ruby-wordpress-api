@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<WORDPRESS_HOST><WORDPRESS_PATH>
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" ?><methodCall><methodName>wp.getTaxonomy</methodName><params><param><value><array><data><value><i4>0</i4></value><value><string><WORDPRESS_USERNAME></string></value><value><string>gxB06s8Z</string></value><value><string>category</string></value></data></array></value></param></params></methodCall>
+    headers:
+      User-Agent:
+      - XMLRPC::Client (Ruby 2.0.0)
+      Content-Type:
+      - text/xml; charset=utf-8
+      Content-Length:
+      - '304'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - identity
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 08 Feb 2014 23:06:54 GMT
+      Server:
+      - Apache/2.2.22
+      X-Powered-By:
+      - PHP/5.3.27
+      Connection:
+      - close
+      Content-Length:
+      - '2846'
+      Vary:
+      - User-Agent,Accept-Encoding
+      Content-Type:
+      - text/xml; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <methodResponse>
+          <params>
+            <param>
+              <value>
+              <struct>
+          <member><name>name</name><value><string>category</string></value></member>
+          <member><name>label</name><value><string>Categories</string></value></member>
+          <member><name>hierarchical</name><value><boolean>1</boolean></value></member>
+          <member><name>public</name><value><boolean>1</boolean></value></member>
+          <member><name>show_ui</name><value><boolean>1</boolean></value></member>
+          <member><name>_builtin</name><value><boolean>1</boolean></value></member>
+          <member><name>labels</name><value><struct>
+          <member><name>name</name><value><string>Categories</string></value></member>
+          <member><name>singular_name</name><value><string>Category</string></value></member>
+          <member><name>search_items</name><value><string>Search Categories</string></value></member>
+          <member><name>popular_items</name><value><string></string></value></member>
+          <member><name>all_items</name><value><string>All Categories</string></value></member>
+          <member><name>parent_item</name><value><string>Parent Category</string></value></member>
+          <member><name>parent_item_colon</name><value><string>Parent Category:</string></value></member>
+          <member><name>edit_item</name><value><string>Edit Category</string></value></member>
+          <member><name>view_item</name><value><string>View Category</string></value></member>
+          <member><name>update_item</name><value><string>Update Category</string></value></member>
+          <member><name>add_new_item</name><value><string>Add New Category</string></value></member>
+          <member><name>new_item_name</name><value><string>New Category Name</string></value></member>
+          <member><name>separate_items_with_commas</name><value><string></string></value></member>
+          <member><name>add_or_remove_items</name><value><string></string></value></member>
+          <member><name>choose_from_most_used</name><value><string></string></value></member>
+          <member><name>not_found</name><value><string></string></value></member>
+          <member><name>menu_name</name><value><string>Categories</string></value></member>
+          <member><name>name_<WORDPRESS_USERNAME>_bar</name><value><string>category</string></value></member>
+        </struct></value></member>
+          <member><name>cap</name><value><struct>
+          <member><name>manage_terms</name><value><string>manage_categories</string></value></member>
+          <member><name>edit_terms</name><value><string>manage_categories</string></value></member>
+          <member><name>delete_terms</name><value><string>manage_categories</string></value></member>
+          <member><name>assign_terms</name><value><string>edit_posts</string></value></member>
+        </struct></value></member>
+          <member><name>object_type</name><value><array><data>
+          <value><string>post</string></value>
+        </data></array></value></member>
+        </struct>
+              </value>
+            </param>
+          </params>
+        </methodResponse>
+    http_version: 
+  recorded_at: Sat, 08 Feb 2014 23:06:55 GMT
+recorded_with: VCR 2.5.0
